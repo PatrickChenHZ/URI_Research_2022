@@ -1,0 +1,11 @@
+Added Component: Designator=Arduino Uno(ARDUINO UNO)
+Added Pin To Net: NetName=+3.3 Pin=Arduino Uno-3.3V
+Added Net: Name=+3.3
+Added Pin To Net: NetName=+5 Pin=Arduino Uno-5V
+Added Net: Name=+5
+Added Net: Name=+12
+Added Pin To Net: NetName=GND Pin=Arduino Uno-GND1
+Added Pin To Net: NetName=GND Pin=Arduino Uno-GND2
+Added Net: Name=GND
+Added Class: Name=Sheet1
+Added Room: Name=Sheet1
