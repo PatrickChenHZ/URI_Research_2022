@@ -1,0 +1,148 @@
+Added Component: Designator=Arduino Uno(ARDUINO UNO)
+Added Component: Designator=J1(GCT_FFC2B28-40-G)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Global Connector Technology"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "FFC2B28-40-G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Package Analog Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/FFC2B28-40-G/Global%20Connector%20Technology/view-part/4223068/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J2(CON: JUMPER x1)
+Add component (AddParameter): Name = "CommentText"; Value = ""?????????""; VariantName = "[No Variations]"
+Added Component: Designator=X1(CON: PLD-8)
+Add component (AddParameter): Name = "CommentText"; Value = ""??????""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CurrentMax"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://www.chipdip.ru/product/pld-8-ds1021-2x4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Connfly"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multichannel"; Value = "8pin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "PLD-8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TypeConnector"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueManufacturerPartNumber"; Value = "Connector, 8pin, 2.54mm, 500VAC, 3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VoltageMax"; Value = "500VAC"; VariantName = "[No Variations]"
+Added Component: Designator=X2(CON: PLD-8)
+Add component (AddParameter): Name = "CommentText"; Value = ""??????""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CurrentMax"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://www.chipdip.ru/product/pld-8-ds1021-2x4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Connfly"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multichannel"; Value = "8pin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "PLD-8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TypeConnector"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueManufacturerPartNumber"; Value = "Connector, 8pin, 2.54mm, 500VAC, 3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VoltageMax"; Value = "500VAC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=Arduino Uno-GND1
+Added Pin To Net: NetName=GND Pin=Arduino Uno-GND2
+Added Pin To Net: NetName=GND Pin=Arduino Uno-GND3
+Added Pin To Net: NetName=GND Pin=J1-38
+Added Pin To Net: NetName=GND Pin=J1-39
+Added Pin To Net: NetName=GND Pin=J1-40
+Added Pin To Net: NetName=GND Pin=J1-S1
+Added Pin To Net: NetName=GND Pin=J1-S2
+Added Pin To Net: NetName=GND Pin=J2-2
+Added Net: Name=GND
+Added Pin To Net: NetName=NetArduino Uno_0 Pin=Arduino Uno-0
+Added Pin To Net: NetName=NetArduino Uno_0 Pin=J1-33
+Added Net: Name=NetArduino Uno_0
+Added Pin To Net: NetName=NetArduino Uno_1 Pin=Arduino Uno-1
+Added Pin To Net: NetName=NetArduino Uno_1 Pin=J1-32
+Added Net: Name=NetArduino Uno_1
+Added Pin To Net: NetName=NetArduino Uno_2 Pin=Arduino Uno-2
+Added Pin To Net: NetName=NetArduino Uno_2 Pin=J1-31
+Added Net: Name=NetArduino Uno_2
+Added Pin To Net: NetName=NetArduino Uno_3.3V Pin=Arduino Uno-3.3V
+Added Pin To Net: NetName=NetArduino Uno_3.3V Pin=J1-36
+Added Net: Name=NetArduino Uno_3.3V
+Added Pin To Net: NetName=NetArduino Uno_3 Pin=Arduino Uno-3
+Added Pin To Net: NetName=NetArduino Uno_3 Pin=J1-30
+Added Net: Name=NetArduino Uno_3
+Added Pin To Net: NetName=NetArduino Uno_4 Pin=Arduino Uno-4
+Added Pin To Net: NetName=NetArduino Uno_4 Pin=J1-18
+Added Net: Name=NetArduino Uno_4
+Added Pin To Net: NetName=NetArduino Uno_5 Pin=Arduino Uno-5
+Added Pin To Net: NetName=NetArduino Uno_5 Pin=J1-19
+Added Net: Name=NetArduino Uno_5
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=Arduino Uno-5V
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=J1-35
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=J2-1
+Added Net: Name=NetArduino Uno_5V
+Added Pin To Net: NetName=NetArduino Uno_6 Pin=Arduino Uno-6
+Added Pin To Net: NetName=NetArduino Uno_6 Pin=J1-20
+Added Net: Name=NetArduino Uno_6
+Added Pin To Net: NetName=NetArduino Uno_7 Pin=Arduino Uno-7
+Added Pin To Net: NetName=NetArduino Uno_7 Pin=J1-21
+Added Net: Name=NetArduino Uno_7
+Added Pin To Net: NetName=NetArduino Uno_8 Pin=Arduino Uno-8
+Added Pin To Net: NetName=NetArduino Uno_8 Pin=J1-22
+Added Net: Name=NetArduino Uno_8
+Added Pin To Net: NetName=NetArduino Uno_9 Pin=Arduino Uno-9
+Added Pin To Net: NetName=NetArduino Uno_9 Pin=J1-23
+Added Net: Name=NetArduino Uno_9
+Added Pin To Net: NetName=NetArduino Uno_10 Pin=Arduino Uno-10
+Added Pin To Net: NetName=NetArduino Uno_10 Pin=J1-24
+Added Net: Name=NetArduino Uno_10
+Added Pin To Net: NetName=NetArduino Uno_11 Pin=Arduino Uno-11
+Added Pin To Net: NetName=NetArduino Uno_11 Pin=J1-25
+Added Net: Name=NetArduino Uno_11
+Added Pin To Net: NetName=NetArduino Uno_12 Pin=Arduino Uno-12
+Added Pin To Net: NetName=NetArduino Uno_12 Pin=J1-26
+Added Net: Name=NetArduino Uno_12
+Added Pin To Net: NetName=NetArduino Uno_13 Pin=Arduino Uno-13
+Added Pin To Net: NetName=NetArduino Uno_13 Pin=J1-27
+Added Net: Name=NetArduino Uno_13
+Added Pin To Net: NetName=NetArduino Uno_SCL Pin=Arduino Uno-SCL
+Added Pin To Net: NetName=NetArduino Uno_SCL Pin=J1-29
+Added Net: Name=NetArduino Uno_SCL
+Added Pin To Net: NetName=NetArduino Uno_SDA Pin=Arduino Uno-SDA
+Added Pin To Net: NetName=NetArduino Uno_SDA Pin=J1-28
+Added Net: Name=NetArduino Uno_SDA
+Added Pin To Net: NetName=NetJ1_1 Pin=J1-1
+Added Pin To Net: NetName=NetJ1_1 Pin=X2-1
+Added Net: Name=NetJ1_1
+Added Pin To Net: NetName=NetJ1_2 Pin=J1-2
+Added Pin To Net: NetName=NetJ1_2 Pin=X2-2
+Added Net: Name=NetJ1_2
+Added Pin To Net: NetName=NetJ1_3 Pin=J1-3
+Added Pin To Net: NetName=NetJ1_3 Pin=X2-3
+Added Net: Name=NetJ1_3
+Added Pin To Net: NetName=NetJ1_4 Pin=J1-4
+Added Pin To Net: NetName=NetJ1_4 Pin=X2-4
+Added Net: Name=NetJ1_4
+Added Pin To Net: NetName=NetJ1_5 Pin=J1-5
+Added Pin To Net: NetName=NetJ1_5 Pin=X2-5
+Added Net: Name=NetJ1_5
+Added Pin To Net: NetName=NetJ1_6 Pin=J1-6
+Added Pin To Net: NetName=NetJ1_6 Pin=X2-6
+Added Net: Name=NetJ1_6
+Added Pin To Net: NetName=NetJ1_7 Pin=J1-7
+Added Pin To Net: NetName=NetJ1_7 Pin=X2-7
+Added Net: Name=NetJ1_7
+Added Pin To Net: NetName=NetJ1_8 Pin=J1-8
+Added Pin To Net: NetName=NetJ1_8 Pin=X2-8
+Added Net: Name=NetJ1_8
+Added Pin To Net: NetName=NetJ1_10 Pin=J1-10
+Added Pin To Net: NetName=NetJ1_10 Pin=X1-1
+Added Net: Name=NetJ1_10
+Added Pin To Net: NetName=NetJ1_11 Pin=J1-11
+Added Pin To Net: NetName=NetJ1_11 Pin=X1-2
+Added Net: Name=NetJ1_11
+Added Pin To Net: NetName=NetJ1_12 Pin=J1-12
+Added Pin To Net: NetName=NetJ1_12 Pin=X1-3
+Added Net: Name=NetJ1_12
+Added Pin To Net: NetName=NetJ1_13 Pin=J1-13
+Added Pin To Net: NetName=NetJ1_13 Pin=X1-4
+Added Net: Name=NetJ1_13
+Added Pin To Net: NetName=NetJ1_14 Pin=J1-14
+Added Pin To Net: NetName=NetJ1_14 Pin=X1-5
+Added Net: Name=NetJ1_14
+Added Pin To Net: NetName=NetJ1_15 Pin=J1-15
+Added Pin To Net: NetName=NetJ1_15 Pin=X1-6
+Added Net: Name=NetJ1_15
+Added Pin To Net: NetName=NetJ1_16 Pin=J1-16
+Added Pin To Net: NetName=NetJ1_16 Pin=X1-7
+Added Net: Name=NetJ1_16
+Added Pin To Net: NetName=NetJ1_17 Pin=J1-17
+Added Pin To Net: NetName=NetJ1_17 Pin=X1-8
+Added Net: Name=NetJ1_17
+Added Class: Name=Sheet1
+Added Room: Name=Sheet1

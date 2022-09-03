@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=NetArduino Uno_A0 Pin=J1-1
+Removed Pin From Net: NetName=NetArduino Uno_A1 Pin=J1-2
+Removed Pin From Net: NetName=NetArduino Uno_A2 Pin=J1-3
+Removed Pin From Net: NetName=NetArduino Uno_A3 Pin=J1-4
+Removed Pin From Net: NetName=NetArduino Uno_A4 Pin=J1-5
+Removed Pin From Net: NetName=NetArduino Uno_A5 Pin=J1-6
+Added Pin To Net: NetName=NetArduino Uno_A5 Pin=J1-1
+Added Pin To Net: NetName=NetArduino Uno_A4 Pin=J1-2
+Added Pin To Net: NetName=NetArduino Uno_A3 Pin=J1-3
+Added Pin To Net: NetName=NetArduino Uno_A2 Pin=J1-4
+Added Pin To Net: NetName=NetArduino Uno_A1 Pin=J1-5
+Added Pin To Net: NetName=NetArduino Uno_A0 Pin=J1-6

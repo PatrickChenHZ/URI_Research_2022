@@ -1,0 +1,254 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\xiong\OneDrive\Documents\GitHub\URI_Research_2022\PCB\PCB_Project\Sheet1.PcbDoc
+Date     : 9/2/2022
+Time     : 11:55:15 PM
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-0(5415.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-1(5315.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-1(5315.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-2(5215.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-10(4355.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-11(4255.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-10(4355.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-9(4455.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-11(4255.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-12(4155.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-12(4155.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-13(4055.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-13(4055.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-GND3(3955.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-2(5215.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-3(5115.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-3(5115.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-4(5015.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-3.3V(4315.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-5V(4415.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-3.3V(4315.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-RST(4215.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-4(5015.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-5(4915.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-5(4915.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-6(4815.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-5V(4415.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-GND2(4515.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-6(4815.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-7(4715.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-8(4555.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-9(4455.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-A0(4915.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A1(5015.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-A1(5015.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A2(5115.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-A2(5115.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A3(5215.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-A3(5215.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A4(5315.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-A4(5315.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A5(5415.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-AREF(3855.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-GND3(3955.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-AREF(3855.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-SDA(3755.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-GND1(4615.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-Vin(4715.315mil,2265.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (9.449mil < 10mil) Between Pad Arduino Uno-SCL(3655.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-SDA(3755.315mil,4165.118mil) on Multi-Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-1(5475.787mil,2661.142mil) on Top Layer And Pad J1-2(5475.787mil,2680.827mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-10(5475.787mil,2838.307mil) on Top Layer And Pad J1-11(5475.787mil,2857.992mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-10(5475.787mil,2838.307mil) on Top Layer And Pad J1-9(5475.787mil,2818.622mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-11(5475.787mil,2857.992mil) on Top Layer And Pad J1-12(5475.787mil,2877.677mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-12(5475.787mil,2877.677mil) on Top Layer And Pad J1-13(5475.787mil,2897.362mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-13(5475.787mil,2897.362mil) on Top Layer And Pad J1-14(5475.787mil,2917.047mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-14(5475.787mil,2917.047mil) on Top Layer And Pad J1-15(5475.787mil,2936.732mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-15(5475.787mil,2936.732mil) on Top Layer And Pad J1-16(5475.787mil,2956.417mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-16(5475.787mil,2956.417mil) on Top Layer And Pad J1-17(5475.787mil,2976.102mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-17(5475.787mil,2976.102mil) on Top Layer And Pad J1-18(5475.787mil,2995.787mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-18(5475.787mil,2995.787mil) on Top Layer And Pad J1-19(5475.787mil,3015.472mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-19(5475.787mil,3015.472mil) on Top Layer And Pad J1-20(5475.787mil,3035.157mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-2(5475.787mil,2680.827mil) on Top Layer And Pad J1-3(5475.787mil,2700.512mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-20(5475.787mil,3035.157mil) on Top Layer And Pad J1-21(5475.787mil,3054.843mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-21(5475.787mil,3054.843mil) on Top Layer And Pad J1-22(5475.787mil,3074.528mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-22(5475.787mil,3074.528mil) on Top Layer And Pad J1-23(5475.787mil,3094.213mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-22(5475.787mil,3074.528mil) on Top Layer And Track (5126.567mil,3074.807mil)(5474.441mil,3074.807mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-23(5475.787mil,3094.213mil) on Top Layer And Pad J1-24(5475.787mil,3113.898mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-23(5475.787mil,3094.213mil) on Top Layer And Track (5131.203mil,3094.213mil)(5475.787mil,3094.213mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-24(5475.787mil,3113.898mil) on Top Layer And Pad J1-25(5475.787mil,3133.583mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-24(5475.787mil,3113.898mil) on Top Layer And Track (5135.28mil,3114.177mil)(5475.508mil,3114.177mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-24(5475.787mil,3113.898mil) on Top Layer And Track (5475.508mil,3114.177mil)(5475.787mil,3113.898mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-25(5475.787mil,3133.583mil) on Top Layer And Pad J1-26(5475.787mil,3153.268mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-25(5475.787mil,3133.583mil) on Top Layer And Track (5139.637mil,3133.862mil)(5475.508mil,3133.862mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-25(5475.787mil,3133.583mil) on Top Layer And Track (5475.508mil,3133.862mil)(5475.787mil,3133.583mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-26(5475.787mil,3153.268mil) on Top Layer And Pad J1-27(5475.787mil,3172.953mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-27(5475.787mil,3172.953mil) on Top Layer And Pad J1-28(5475.787mil,3192.638mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-28(5475.787mil,3192.638mil) on Top Layer And Pad J1-29(5475.787mil,3212.323mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-29(5475.787mil,3212.323mil) on Top Layer And Pad J1-30(5475.787mil,3232.008mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-3(5475.787mil,2700.512mil) on Top Layer And Pad J1-4(5475.787mil,2720.197mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-30(5475.787mil,3232.008mil) on Top Layer And Pad J1-31(5475.787mil,3251.693mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-31(5475.787mil,3251.693mil) on Top Layer And Pad J1-32(5475.787mil,3271.378mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-32(5475.787mil,3271.378mil) on Top Layer And Pad J1-33(5475.787mil,3291.063mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-32(5475.787mil,3271.378mil) on Top Layer And Track (5363.622mil,3271.378mil)(5475.787mil,3271.378mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-33(5475.787mil,3291.063mil) on Top Layer And Pad J1-34(5475.787mil,3310.748mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad J1-33(5475.787mil,3291.063mil) on Top Layer And Track (5393.937mil,3291.063mil)(5475.787mil,3291.063mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-34(5475.787mil,3310.748mil) on Top Layer And Pad J1-35(5475.787mil,3330.433mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-35(5475.787mil,3330.433mil) on Top Layer And Pad J1-36(5475.787mil,3350.118mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-36(5475.787mil,3350.118mil) on Top Layer And Pad J1-37(5475.787mil,3369.803mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-37(5475.787mil,3369.803mil) on Top Layer And Pad J1-38(5475.787mil,3389.488mil) on Top Layer 
+   Violation between Clearance Constraint: (8.78mil < 10mil) Between Pad J1-37(5475.787mil,3369.803mil) on Top Layer And Track (5475.787mil,3389.488mil)(5485.63mil,3389.488mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-4(5475.787mil,2720.197mil) on Top Layer And Pad J1-5(5475.787mil,2739.882mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-5(5475.787mil,2739.882mil) on Top Layer And Pad J1-6(5475.787mil,2759.567mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-6(5475.787mil,2759.567mil) on Top Layer And Pad J1-7(5475.787mil,2779.252mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-7(5475.787mil,2779.252mil) on Top Layer And Pad J1-8(5475.787mil,2798.937mil) on Top Layer 
+   Violation between Clearance Constraint: (7.874mil < 10mil) Between Pad J1-8(5475.787mil,2798.937mil) on Top Layer And Pad J1-9(5475.787mil,2818.622mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad X1-4(4255mil,4065mil) on Multi-Layer And Track (4251.568mil,4061.568mil)(4255mil,4065mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad X1-5(4155mil,4065mil) on Multi-Layer And Track (4155mil,4065mil)(4157.426mil,4062.574mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad X1-6(4055mil,4065mil) on Multi-Layer And Track (4053.284mil,4063.284mil)(4055mil,4065mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 10mil) Between Pad X1-7(3955mil,4065mil) on Multi-Layer And Track (3955mil,4065mil)(3956.642mil,4063.358mil) on Top Layer 
+Rule Violations :75
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net NetArduino Uno_5 Between Pad J1-22(5475.787mil,3074.528mil) on Top Layer And Track (5131.203mil,3094.213mil)(5475.787mil,3094.213mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetArduino Uno_4 Between Track (5126.567mil,3074.807mil)(5474.441mil,3074.807mil) on Top Layer And Pad J1-23(5475.787mil,3094.213mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetArduino Uno_7 Between Pad J1-24(5475.787mil,3113.898mil) on Top Layer And Track (5475.508mil,3133.862mil)(5475.787mil,3133.583mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetArduino Uno_6 Between Track (5475.508mil,3114.177mil)(5475.787mil,3113.898mil) on Top Layer And Pad J1-25(5475.787mil,3133.583mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetArduino Uno_SDA Between Pad J1-32(5475.787mil,3271.378mil) on Top Layer And Track (5393.937mil,3291.063mil)(5475.787mil,3291.063mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetArduino Uno_SCL Between Track (5363.622mil,3271.378mil)(5475.787mil,3271.378mil) on Top Layer And Pad J1-33(5475.787mil,3291.063mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetJ1_14 Between Track (4251.568mil,4061.568mil)(4255mil,4065mil) on Top Layer And Pad X1-1(4555mil,4065mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetJ1_13 Between Track (4155mil,4065mil)(4157.426mil,4062.574mil) on Top Layer And Pad X1-2(4455mil,4065mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetJ1_11 Between Track (3955mil,4065mil)(3956.642mil,4063.358mil) on Top Layer And Pad X1-4(4255mil,4065mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetJ1_12 Between Track (4053.284mil,4063.284mil)(4055mil,4065mil) on Top Layer And Track (4354.042mil,4064.042mil)(4355mil,4065mil) on Top Layer 
+Rule Violations :10
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=7mil) (Max=7mil) (Preferred=7mil) (All)
+   Violation between Width Constraint: Track (3955mil,4065mil)(3956.642mil,4063.358mil) on Top Layer Actual Width = 10mil, Target Width = 7mil
+   Violation between Width Constraint: Track (4053.284mil,4063.284mil)(4055mil,4065mil) on Top Layer Actual Width = 10mil, Target Width = 7mil
+   Violation between Width Constraint: Track (4155mil,4065mil)(4157.426mil,4062.574mil) on Top Layer Actual Width = 10mil, Target Width = 7mil
+   Violation between Width Constraint: Track (4251.568mil,4061.568mil)(4255mil,4065mil) on Top Layer Actual Width = 10mil, Target Width = 7mil
+   Violation between Width Constraint: Track (5115.315mil,2265.118mil)(5120mil,2269.803mil) on Top Layer Actual Width = 10mil, Target Width = 7mil
+   Violation between Width Constraint: Track (5415mil,2265.433mil)(5415.315mil,2265.118mil) on Top Layer Actual Width = 10mil, Target Width = 7mil
+   Violation between Width Constraint: Track (5475.787mil,3389.488mil)(5485.63mil,3389.488mil) on Top Layer Actual Width = 10mil, Target Width = 7mil
+Rule Violations :7
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-0(5415.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-1(5315.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.472mil < 10mil) Between Pad Arduino Uno-0(5415.315mil,4165.118mil) on Multi-Layer And Pad X2-1(5415mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.472mil] / [Bottom Solder] Mask Sliver [7.472mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-1(5315.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-2(5215.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-1(5315.315mil,4165.118mil) on Multi-Layer And Pad X2-2(5315mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-10(4355.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-11(4255.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-10(4355.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-9(4455.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-10(4355.315mil,4165.118mil) on Multi-Layer And Pad X1-3(4355mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-11(4255.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-12(4155.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-11(4255.315mil,4165.118mil) on Multi-Layer And Pad X1-4(4255mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-12(4155.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-13(4055.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-12(4155.315mil,4165.118mil) on Multi-Layer And Pad X1-5(4155mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-13(4055.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-GND3(3955.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-13(4055.315mil,4165.118mil) on Multi-Layer And Pad X1-6(4055mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-2(5215.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-3(5115.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-2(5215.315mil,4165.118mil) on Multi-Layer And Pad X2-3(5215mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-3(5115.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-4(5015.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-3(5115.315mil,4165.118mil) on Multi-Layer And Pad X2-4(5115mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-3.3V(4315.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-5V(4415.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-3.3V(4315.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-RST(4215.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-4(5015.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-5(4915.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-4(5015.315mil,4165.118mil) on Multi-Layer And Pad X2-5(5015mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-5(4915.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-6(4815.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-5(4915.315mil,4165.118mil) on Multi-Layer And Pad X2-6(4915mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-5V(4415.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-GND2(4515.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-6(4815.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-7(4715.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-6(4815.315mil,4165.118mil) on Multi-Layer And Pad X2-7(4815mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-7(4715.315mil,4165.118mil) on Multi-Layer And Pad X2-8(4715mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-8(4555.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-9(4455.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.472mil < 10mil) Between Pad Arduino Uno-8(4555.315mil,4165.118mil) on Multi-Layer And Pad X1-1(4555mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.472mil] / [Bottom Solder] Mask Sliver [7.472mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-9(4455.315mil,4165.118mil) on Multi-Layer And Pad X1-2(4455mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-A0(4915.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A1(5015.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-A1(5015.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A2(5115.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-A2(5115.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A3(5215.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-A3(5215.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A4(5315.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-A4(5315.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-A5(5415.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-AREF(3855.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-GND3(3955.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-AREF(3855.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-SDA(3755.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-AREF(3855.315mil,4165.118mil) on Multi-Layer And Pad X1-8(3855mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-GND1(4615.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-GND2(4515.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-GND1(4615.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-Vin(4715.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (7.473mil < 10mil) Between Pad Arduino Uno-GND3(3955.315mil,4165.118mil) on Multi-Layer And Pad X1-7(3955mil,4065mil) on Multi-Layer [Top Solder] Mask Sliver [7.473mil] / [Bottom Solder] Mask Sliver [7.473mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-IOREF(4115.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-NC(4015.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-IOREF(4115.315mil,2265.118mil) on Multi-Layer And Pad Arduino Uno-RST(4215.315mil,2265.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.449mil < 10mil) Between Pad Arduino Uno-SCL(3655.315mil,4165.118mil) on Multi-Layer And Pad Arduino Uno-SDA(3755.315mil,4165.118mil) on Multi-Layer [Top Solder] Mask Sliver [1.449mil] / [Bottom Solder] Mask Sliver [1.449mil]
+Rule Violations :44
+
+Processing Rule : Silk To Solder Mask (Clearance=5mil) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "1" (5332.9mil,4079.257mil) on Top Overlay And Track (5265mil,4090mil)(5290mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (1.683mil < 10mil) Between Text "10" (4372.9mil,4023.741mil) on Top Overlay And Track (4305mil,4040mil)(4330mil,4015mil) on Top Overlay Silk Text to Silk Clearance [1.683mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "10" (4372.9mil,4023.741mil) on Top Overlay And Track (4305mil,4090mil)(4330mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (1.948mil < 10mil) Between Text "10" (4372.9mil,4023.741mil) on Top Overlay And Track (4330mil,4015mil)(4380mil,4015mil) on Top Overlay Silk Text to Silk Clearance [1.948mil]
+   Violation between Silk To Silk Clearance Constraint: (4.409mil < 10mil) Between Text "10" (4372.9mil,4023.741mil) on Top Overlay And Track (4380mil,4015mil)(4405mil,4040mil) on Top Overlay Silk Text to Silk Clearance [4.409mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "11" (4272.9mil,4039.603mil) on Top Overlay And Track (4205mil,4090mil)(4230mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (1.683mil < 10mil) Between Text "12" (4172.9mil,4023.741mil) on Top Overlay And Track (4105mil,4040mil)(4130mil,4015mil) on Top Overlay Silk Text to Silk Clearance [1.683mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "12" (4172.9mil,4023.741mil) on Top Overlay And Track (4105mil,4090mil)(4130mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (1.948mil < 10mil) Between Text "12" (4172.9mil,4023.741mil) on Top Overlay And Track (4130mil,4015mil)(4180mil,4015mil) on Top Overlay Silk Text to Silk Clearance [1.948mil]
+   Violation between Silk To Silk Clearance Constraint: (4.409mil < 10mil) Between Text "12" (4172.9mil,4023.741mil) on Top Overlay And Track (4180mil,4015mil)(4205mil,4040mil) on Top Overlay Silk Text to Silk Clearance [4.409mil]
+   Violation between Silk To Silk Clearance Constraint: (1.683mil < 10mil) Between Text "13" (4072.9mil,4023.741mil) on Top Overlay And Track (4005mil,4040mil)(4030mil,4015mil) on Top Overlay Silk Text to Silk Clearance [1.683mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "13" (4072.9mil,4023.741mil) on Top Overlay And Track (4005mil,4090mil)(4030mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (1.948mil < 10mil) Between Text "13" (4072.9mil,4023.741mil) on Top Overlay And Track (4030mil,4015mil)(4080mil,4015mil) on Top Overlay Silk Text to Silk Clearance [1.948mil]
+   Violation between Silk To Silk Clearance Constraint: (4.409mil < 10mil) Between Text "13" (4072.9mil,4023.741mil) on Top Overlay And Track (4080mil,4015mil)(4105mil,4040mil) on Top Overlay Silk Text to Silk Clearance [4.409mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "2" (5232.9mil,4063.395mil) on Top Overlay And Track (5165mil,4090mil)(5190mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "3" (5132.9mil,4063.395mil) on Top Overlay And Track (5065mil,4090mil)(5090mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "4" (5032.9mil,4063.395mil) on Top Overlay And Track (4965mil,4090mil)(4990mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (3.953mil < 10mil) Between Text "5" (4932.9mil,4063.395mil) on Top Overlay And Track (4865mil,4090mil)(4890mil,4115mil) on Top Overlay Silk Text to Silk Clearance [3.953mil]
+   Violation between Silk To Silk Clearance Constraint: (3.953mil < 10mil) Between Text "6" (4832.9mil,4063.395mil) on Top Overlay And Track (4765mil,4090mil)(4790mil,4115mil) on Top Overlay Silk Text to Silk Clearance [3.953mil]
+   Violation between Silk To Silk Clearance Constraint: (3.953mil < 10mil) Between Text "7" (4732.9mil,4063.395mil) on Top Overlay And Track (4665mil,4090mil)(4690mil,4115mil) on Top Overlay Silk Text to Silk Clearance [3.953mil]
+   Violation between Silk To Silk Clearance Constraint: (9.561mil < 10mil) Between Text "9" (4472.9mil,4063.395mil) on Top Overlay And Track (4405mil,4090mil)(4430mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.561mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "AREF" (3869.9mil,3926.641mil) on Top Overlay And Track (3805mil,4040mil)(3830mil,4015mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "AREF" (3869.9mil,3926.641mil) on Top Overlay And Track (3805mil,4090mil)(3830mil,4115mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (0.493mil < 10mil) Between Text "AREF" (3869.9mil,3926.641mil) on Top Overlay And Track (3830mil,4015mil)(3880mil,4015mil) on Top Overlay Silk Text to Silk Clearance [0.493mil]
+   Violation between Silk To Silk Clearance Constraint: (9.55mil < 10mil) Between Text "AREF" (3869.9mil,3926.641mil) on Top Overlay And Track (3830mil,4115mil)(3880mil,4115mil) on Top Overlay Silk Text to Silk Clearance [9.55mil]
+   Violation between Silk To Silk Clearance Constraint: (5.865mil < 10mil) Between Text "AREF" (3869.9mil,3926.641mil) on Top Overlay And Track (3880mil,4015mil)(3905mil,4040mil) on Top Overlay Silk Text to Silk Clearance [5.865mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "GND" (3973.9mil,3973.226mil) on Top Overlay And Track (3905mil,4040mil)(3930mil,4015mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (7.208mil < 10mil) Between Text "GND" (3973.9mil,3973.226mil) on Top Overlay And Track (3905mil,4090mil)(3930mil,4115mil) on Top Overlay Silk Text to Silk Clearance [7.208mil]
+   Violation between Silk To Silk Clearance Constraint: (9.62mil < 10mil) Between Text "GND" (3973.9mil,3973.226mil) on Top Overlay And Track (3930.315mil,4115.118mil)(3980.315mil,4115.118mil) on Top Overlay Silk Text to Silk Clearance [9.62mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "GND" (3973.9mil,3973.226mil) on Top Overlay And Track (3930mil,4015mil)(3980mil,4015mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (8.565mil < 10mil) Between Text "GND" (3973.9mil,3973.226mil) on Top Overlay And Track (3930mil,4115mil)(3980mil,4115mil) on Top Overlay Silk Text to Silk Clearance [8.565mil]
+   Violation between Silk To Silk Clearance Constraint: (2.108mil < 10mil) Between Text "GND" (3973.9mil,3973.226mil) on Top Overlay And Track (3980mil,4015mil)(4005mil,4040mil) on Top Overlay Silk Text to Silk Clearance [2.108mil]
+   Violation between Silk To Silk Clearance Constraint: (2.546mil < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3780.315mil,4115.118mil)(3805.315mil,4140.118mil) on Top Overlay Silk Text to Silk Clearance [2.546mil]
+   Violation between Silk To Silk Clearance Constraint: (7.193mil < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3780.315mil,4215.118mil)(3805.315mil,4190.118mil) on Top Overlay Silk Text to Silk Clearance [7.193mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3805.315mil,4140.118mil)(3805.315mil,4190.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (2.546mil < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3805.315mil,4140.118mil)(3830.315mil,4115.118mil) on Top Overlay Silk Text to Silk Clearance [2.546mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3805.315mil,4190.118mil)(3830.315mil,4215.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3830.315mil,4215.118mil)(3880.315mil,4215.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (8.421mil < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3880.315mil,4115.118mil)(3905.315mil,4140.118mil) on Top Overlay Silk Text to Silk Clearance [8.421mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3880.315mil,4215.118mil)(3905.315mil,4190.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (6.341mil < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3905.315mil,4140.118mil)(3905.315mil,4190.118mil) on Top Overlay Silk Text to Silk Clearance [6.341mil]
+   Violation between Silk To Silk Clearance Constraint: (8.868mil < 10mil) Between Text "X1" (3811mil,4149mil) on Top Overlay And Track (3905.315mil,4140.118mil)(3930.315mil,4115.118mil) on Top Overlay Silk Text to Silk Clearance [8.869mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4665.315mil,4140.118mil)(4665.315mil,4190.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (2.546mil < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4665.315mil,4140.118mil)(4690.315mil,4115.118mil) on Top Overlay Silk Text to Silk Clearance [2.546mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4665.315mil,4190.118mil)(4690.315mil,4215.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4690.315mil,4215.118mil)(4740.315mil,4215.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (0.882mil < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4740.315mil,4115.118mil)(4765.315mil,4140.118mil) on Top Overlay Silk Text to Silk Clearance [0.882mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4740.315mil,4215.118mil)(4765.315mil,4190.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4765.315mil,4140.118mil)(4765.315mil,4190.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (0.882mil < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4765.315mil,4140.118mil)(4790.315mil,4115.118mil) on Top Overlay Silk Text to Silk Clearance [0.882mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "X2" (4671mil,4149mil) on Top Overlay And Track (4765.315mil,4190.118mil)(4790.315mil,4215.118mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+Rule Violations :51
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+   Violation between Net Antennae: Track (3955mil,4065mil)(3956.642mil,4063.358mil) on Top Layer 
+   Violation between Net Antennae: Track (3955mil,4065mil)(3956.642mil,4063.358mil) on Top Layer 
+   Violation between Net Antennae: Track (4053.284mil,4063.284mil)(4055mil,4065mil) on Top Layer 
+   Violation between Net Antennae: Track (4053.284mil,4063.284mil)(4055mil,4065mil) on Top Layer 
+   Violation between Net Antennae: Track (4155mil,4065mil)(4157.426mil,4062.574mil) on Top Layer 
+   Violation between Net Antennae: Track (4155mil,4065mil)(4157.426mil,4062.574mil) on Top Layer 
+   Violation between Net Antennae: Track (4251.568mil,4061.568mil)(4255mil,4065mil) on Top Layer 
+   Violation between Net Antennae: Track (4251.568mil,4061.568mil)(4255mil,4065mil) on Top Layer 
+   Violation between Net Antennae: Track (5126.567mil,3074.807mil)(5474.441mil,3074.807mil) on Top Layer 
+   Violation between Net Antennae: Track (5131.203mil,3094.213mil)(5475.787mil,3094.213mil) on Top Layer 
+   Violation between Net Antennae: Track (5135.28mil,3114.177mil)(5475.508mil,3114.177mil) on Top Layer 
+   Violation between Net Antennae: Track (5139.637mil,3133.862mil)(5475.508mil,3133.862mil) on Top Layer 
+   Violation between Net Antennae: Track (5363.622mil,3271.378mil)(5475.787mil,3271.378mil) on Top Layer 
+   Violation between Net Antennae: Track (5393.937mil,3291.063mil)(5475.787mil,3291.063mil) on Top Layer 
+Rule Violations :14
+
+Processing Rule : Room Sheet1 (Bounding Region = (7045mil, 1060mil, 10095mil, 3885mil) (InComponentClass('Sheet1'))
+   Violation between Room Definition: Between Component Arduino Uno-ARDUINO UNO (4335mil,3210mil) on Top Layer And Room Sheet1 (Bounding Region = (7045mil, 1060mil, 10095mil, 3885mil) (InComponentClass('Sheet1')) 
+   Violation between Room Definition: Between Room Sheet1 (Bounding Region = (7045mil, 1060mil, 10095mil, 3885mil) (InComponentClass('Sheet1')) And SIP Component X1-Connector, 8pin, 2.54mm, 500VAC, 3A (4205mil,4065mil) on Top Layer 
+   Violation between Room Definition: Between Room Sheet1 (Bounding Region = (7045mil, 1060mil, 10095mil, 3885mil) (InComponentClass('Sheet1')) And SIP Component X2-Connector, 8pin, 2.54mm, 500VAC, 3A (5065mil,4065mil) on Top Layer 
+   Violation between Room Definition: Between Room Sheet1 (Bounding Region = (7045mil, 1060mil, 10095mil, 3885mil) (InComponentClass('Sheet1')) And Small Component X3-Connector, 2pin, 2.54mm, 500VAC, 3A (3730mil,2785mil) on Top Layer 
+   Violation between Room Definition: Between Room Sheet1 (Bounding Region = (7045mil, 1060mil, 10095mil, 3885mil) (InComponentClass('Sheet1')) And SMT SIP Component J1-FFC2B28-40-G (5525mil,3045mil) on Top Layer 
+Rule Violations :5
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 206
+Waived Violations : 0
+Time Elapsed        : 00:00:02

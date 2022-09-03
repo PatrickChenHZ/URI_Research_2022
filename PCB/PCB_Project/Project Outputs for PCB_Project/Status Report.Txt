@@ -1,0 +1,10 @@
+Output: WireList Netlist
+Type  : WireListNetlist
+From  : Project [PCB_Project.PrjPcb]
+   Generated File[Sheet1.NET]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 3:51:05 PM On 9/2/2022

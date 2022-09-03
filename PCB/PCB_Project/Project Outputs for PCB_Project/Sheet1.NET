@@ -1,0 +1,159 @@
+Wire List
+
+<<< Component List >>>
+ARDUINO UNO                     Arduino U      ARDUINO UNO
+FFC2B28-40-G                    J1             GCT_FFC2B28-40-G
+                                J2             CON: JUMPER x1
+Connector, 8pin, 2.54mm, 500VAC, 3AX?             CON: PLS-8
+Connector, 8pin, 2.54mm, 500VAC, 3AX?             CON: PLS-8
+
+<<< Wire List >>>
+
+  NODE  REFERENCE  PIN #   PIN NAME       PIN TYPE    PART VALUE
+
+[00001] GND
+        Arduino U  GND1    GND            PASSIVE     ARDUINO UNO
+        Arduino U  GND2    GND            PASSIVE     ARDUINO UNO
+        Arduino U  GND3    GND            PASSIVE     ARDUINO UNO
+        J1         38      38             PASSIVE     FFC2B28-40-G
+        J1         39      39             PASSIVE     FFC2B28-40-G
+        J1         40      40             PASSIVE     FFC2B28-40-G
+        J1         S1      SHIELD         PASSIVE     FFC2B28-40-G
+        J1         S2      SHIELD         PASSIVE     FFC2B28-40-G
+        J2         2       IN             PASSIVE     
+
+[00002] NetArduino Uno_0
+        Arduino U  0       RX             PASSIVE     ARDUINO UNO
+        J1         33      33             PASSIVE     FFC2B28-40-G
+
+[00003] NetArduino Uno_1
+        Arduino U  1       TX             PASSIVE     ARDUINO UNO
+        J1         32      32             PASSIVE     FFC2B28-40-G
+
+[00004] NetArduino Uno_2
+        Arduino U  2       D2             PASSIVE     ARDUINO UNO
+        J1         31      31             PASSIVE     FFC2B28-40-G
+
+[00005] NetArduino Uno_3
+        Arduino U  3       D3             PASSIVE     ARDUINO UNO
+        J1         30      30             PASSIVE     FFC2B28-40-G
+
+[00006] NetArduino Uno_3.3V
+        Arduino U  3.3V    3.3V           PASSIVE     ARDUINO UNO
+        J1         36      36             PASSIVE     FFC2B28-40-G
+
+[00007] NetArduino Uno_4
+        Arduino U  4       D4             PASSIVE     ARDUINO UNO
+        J1         18      18             PASSIVE     FFC2B28-40-G
+
+[00008] NetArduino Uno_5
+        Arduino U  5       D5             PASSIVE     ARDUINO UNO
+        J1         19      19             PASSIVE     FFC2B28-40-G
+
+[00009] NetArduino Uno_5V
+        Arduino U  5V      5V             PASSIVE     ARDUINO UNO
+        J1         35      35             PASSIVE     FFC2B28-40-G
+        J2         1       IN             PASSIVE     
+
+[00010] NetArduino Uno_6
+        Arduino U  6       D6             PASSIVE     ARDUINO UNO
+        J1         20      20             PASSIVE     FFC2B28-40-G
+
+[00011] NetArduino Uno_7
+        Arduino U  7       D7             PASSIVE     ARDUINO UNO
+        J1         21      21             PASSIVE     FFC2B28-40-G
+
+[00012] NetArduino Uno_8
+        Arduino U  8       D8             PASSIVE     ARDUINO UNO
+        J1         22      22             PASSIVE     FFC2B28-40-G
+
+[00013] NetArduino Uno_9
+        Arduino U  9       D9             PASSIVE     ARDUINO UNO
+        J1         23      23             PASSIVE     FFC2B28-40-G
+
+[00014] NetArduino Uno_10
+        Arduino U  10      D10            PASSIVE     ARDUINO UNO
+        J1         24      24             PASSIVE     FFC2B28-40-G
+
+[00015] NetArduino Uno_11
+        Arduino U  11      D11            PASSIVE     ARDUINO UNO
+        J1         25      25             PASSIVE     FFC2B28-40-G
+
+[00016] NetArduino Uno_12
+        Arduino U  12      D12            PASSIVE     ARDUINO UNO
+        J1         26      26             PASSIVE     FFC2B28-40-G
+
+[00017] NetArduino Uno_13
+        Arduino U  13      D13            PASSIVE     ARDUINO UNO
+        J1         27      27             PASSIVE     FFC2B28-40-G
+
+[00018] NetArduino Uno_A0
+        Arduino U  A0      A0             PASSIVE     ARDUINO UNO
+        J1         1       1              PASSIVE     FFC2B28-40-G
+
+[00019] NetArduino Uno_A1
+        Arduino U  A1      A1             PASSIVE     ARDUINO UNO
+        J1         2       2              PASSIVE     FFC2B28-40-G
+
+[00020] NetArduino Uno_A2
+        Arduino U  A2      A2             PASSIVE     ARDUINO UNO
+        J1         3       3              PASSIVE     FFC2B28-40-G
+
+[00021] NetArduino Uno_A3
+        Arduino U  A3      A3             PASSIVE     ARDUINO UNO
+        J1         4       4              PASSIVE     FFC2B28-40-G
+
+[00022] NetArduino Uno_A4
+        Arduino U  A4      A4             PASSIVE     ARDUINO UNO
+        J1         5       5              PASSIVE     FFC2B28-40-G
+
+[00023] NetArduino Uno_A5
+        Arduino U  A5      A5             PASSIVE     ARDUINO UNO
+        J1         6       6              PASSIVE     FFC2B28-40-G
+
+[00028] NetArduino Uno_SCL
+        Arduino U  SCL     SCL            PASSIVE     ARDUINO UNO
+        J1         29      29             PASSIVE     FFC2B28-40-G
+
+[00029] NetArduino Uno_SDA
+        Arduino U  SDA     SDA            PASSIVE     ARDUINO UNO
+        J1         28      28             PASSIVE     FFC2B28-40-G
+
+[00031] NetJ1_7
+        J1         7       7              PASSIVE     FFC2B28-40-G
+
+[00032] NetJ1_8
+        J1         8       8              PASSIVE     FFC2B28-40-G
+
+[00034] NetJ1_10
+        J1         10      10             PASSIVE     FFC2B28-40-G
+        X?         1       1              PASSIVE     Connector, 8pin, 2.54mm, 500VAC, 3A
+
+[00035] NetJ1_11
+        J1         11      11             PASSIVE     FFC2B28-40-G
+        X?         2       2              PASSIVE     Connector, 8pin, 2.54mm, 500VAC, 3A
+
+[00036] NetJ1_12
+        J1         12      12             PASSIVE     FFC2B28-40-G
+        X?         3       3              POWER       Connector, 8pin, 2.54mm, 500VAC, 3A
+
+[00037] NetJ1_13
+        J1         13      13             PASSIVE     FFC2B28-40-G
+        X?         4       4              POWER       Connector, 8pin, 2.54mm, 500VAC, 3A
+
+[00038] NetJ1_14
+        J1         14      14             PASSIVE     FFC2B28-40-G
+        X?         5       5              POWER       Connector, 8pin, 2.54mm, 500VAC, 3A
+
+[00039] NetJ1_15
+        J1         15      15             PASSIVE     FFC2B28-40-G
+        X?         6       6              POWER       Connector, 8pin, 2.54mm, 500VAC, 3A
+
+[00040] NetJ1_16
+        J1         16      16             PASSIVE     FFC2B28-40-G
+        X?         7       7              POWER       Connector, 8pin, 2.54mm, 500VAC, 3A
+
+[00041] NetJ1_17
+        J1         17      17             PASSIVE     FFC2B28-40-G
+        X?         8       8              POWER       Connector, 8pin, 2.54mm, 500VAC, 3A
+

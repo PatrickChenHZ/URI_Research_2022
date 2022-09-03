@@ -1,0 +1,24 @@
+Change Component Footprint: Designator=X1 Old Footprint=CON: PLD-8 New Footprint=CON: PLS-8
+Change Component Footprint: Designator=X2 Old Footprint=CON: PLD-8 New Footprint=CON: PLS-8
+Change component parameters: Designator = "X1" ("X1"); Footprint = "CON: PLD-8"; UniqueID = "\KDCJFMNX" ("\KDCJFMNX")
+Change component parameters (AddParameter): Name = "CommentText"; Value = ""??????""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CurrentMax"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "HelpURL"; Value = "https://www.chipdip.ru/product/pls-8-ds1021-1-8sf112"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Connfly"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Multichannel"; Value = "8pin"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = "PLS-8"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TypeConnector"; Value = "Connector"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ValueManufacturerPartNumber"; Value = "Connector, 8pin, 2.54mm, 500VAC, 3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "VoltageMax"; Value = "500VAC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "X2" ("X2"); Footprint = "CON: PLD-8"; UniqueID = "\ZQZDWPLZ" ("\ZQZDWPLZ")
+Change component parameters (AddParameter): Name = "CommentText"; Value = ""??????""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CurrentMax"; Value = "3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "HelpURL"; Value = "https://www.chipdip.ru/product/pls-8-ds1021-1-8sf112"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Connfly"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Multichannel"; Value = "8pin"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = "PLS-8"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TypeConnector"; Value = "Connector"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ValueManufacturerPartNumber"; Value = "Connector, 8pin, 2.54mm, 500VAC, 3A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "VoltageMax"; Value = "500VAC"; VariantName = "[No Variations]"

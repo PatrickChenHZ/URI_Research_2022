@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=NetArduino Uno_5V Pin=J2-1
+Removed Pin From Net: NetName=GND Pin=J2-2
+Removed Member From Class: ClassName=Sheet1 Member=J2
+Added Component: Designator=X3(CON: PLS-2)
+Add component (AddParameter): Name = "CommentText"; Value = ""??????""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CurrentMax"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://www.chipdip.ru/product/pls-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Connfly"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multichannel"; Value = "2pin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "PLS-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TypeConnector"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueManufacturerPartNumber"; Value = "Connector, 2pin, 2.54mm, 500VAC, 3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VoltageMax"; Value = "500VAC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=X3-1
+Added Pin To Net: NetName=GND Pin=X3-2
+Added Member To Class: ClassName=Sheet1 Member=Component X3 Connector, 2pin, 2.54mm, 500VAC, 3A
