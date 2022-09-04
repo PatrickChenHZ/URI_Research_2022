@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=Shield_Project\Shield_Project.PrjPcb
+[Project2]
+ProjectPath=Extension_Project\PCB_Project\PCB_Project.PrjPcb
