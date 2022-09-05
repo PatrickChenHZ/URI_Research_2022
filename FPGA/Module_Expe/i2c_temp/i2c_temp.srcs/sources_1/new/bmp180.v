@@ -27,13 +27,13 @@ module bmp180(
     input wire i2c_clk,
     input wire sys_clk,
     input wire sys_rst,
-    output reg i2c_exec,
+    output reg i2c_exec,//flip back after 1 iic clk cycle seems to work, do not wait for done flag to flip back
     output reg i2c_rw,//read high, write low
     output reg [15:0] i2c_reg_addr,//slave addr is parameter of core
     output reg [7:0] i2c_data_w
     );
     
-    reg [3:0] state = 4'd1;
+    reg [3:0] state = 4'd0;
     //reg init = 1'd0;
     localparam [3:0] SETUP = 4'd0,
                      SETUP2 = 4'd1,
@@ -47,18 +47,18 @@ module bmp180(
     always@(posedge i2c_clk) begin
         case(state)
             SETUP: begin
-                /*
-                if(sys_rst == 1'b1)begin
+                i2c_rw <= 1'b0;
+                    i2c_reg_addr <= 8'h00;
+                    i2c_data_w <= 8'h00;
+                    i2c_exec <= 1'b0;
                     state <= SETUP2;
-                end
-                */
             end
             SETUP2: begin
                 if(sys_rst == 1'b1) begin
                     i2c_rw <= 1'b0;
                     i2c_reg_addr <= 8'h77;
                     i2c_data_w <= 8'h43;
-                    i2c_exec <= 1'b0;
+                    //i2c_exec <= 1'b0;
                     state <= SEND;
                 end
             end
@@ -68,11 +68,13 @@ module bmp180(
             end
             SEND_TRANS: begin
                 if(i2c_done == 1'b1) begin
-                    state = READ_SETUP;
+                    state <= READ_SETUP;
+                end
+                else begin
+                    i2c_exec <= 1'd0;
                 end
             end
             READ_SETUP: begin
-                i2c_exec <= 1'd0;
                 i2c_rw <= 1'd1;
                 i2c_reg_addr <= 8'h77;
                 i2c_data_w <= 8'd0;
@@ -86,9 +88,12 @@ module bmp180(
                 if(i2c_done == 1'b1) begin
                     state = IDLE;
                 end
+                else begin
+                    i2c_exec <= 1'd0;
+                end
             end
             IDLE: begin
-                i2c_exec = 1'd0;
+                i2c_exec <= 1'd0;
             end
             default : ;
         endcase

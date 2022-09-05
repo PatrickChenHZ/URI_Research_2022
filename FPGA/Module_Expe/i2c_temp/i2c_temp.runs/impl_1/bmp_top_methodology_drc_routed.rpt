@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Sun Sep  4 12:01:00 2022
+| Date         : Mon Sep  5 03:02:00 2022
 | Host         : XPS-9520 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file bmp_top_methodology_drc_routed.rpt -pb bmp_top_methodology_drc_routed.pb -rpx bmp_top_methodology_drc_routed.rpx
 | Design       : bmp_top
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 31
+             Violations found: 32
 +-----------+------------------+----------------------------------+------------+
 | Rule      | Severity         | Description                      | Violations |
 +-----------+------------------+----------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell      | 29         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell      | 30         |
 | HPDR-1    | Warning          | Port pin direction inconsistency | 1          |
 | TIMING-18 | Warning          | Missing input or output delay    | 1          |
 +-----------+------------------+----------------------------------+------------+
@@ -61,120 +61,125 @@ Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_bmp180/i2c_rw_reg/C is not reached by a timing clock
+The clock pin u_bmp180/i2c_reg_addr_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/addr_t_reg[6]/C is not reached by a timing clock
+The clock pin u_bmp180/i2c_rw_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#8 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_i2c_dri/addr_t_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#9 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#11 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#12 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[0]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#16 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[1]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#17 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[2]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[3]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[4]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[5]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[6]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/cur_state_reg[7]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/data_wr_t_reg[6]/C is not reached by a timing clock
+The clock pin u_i2c_dri/cur_state_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/i2c_done_reg/C is not reached by a timing clock
+The clock pin u_i2c_dri/data_wr_t_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/scl_reg/C is not reached by a timing clock
+The clock pin u_i2c_dri/i2c_done_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/sda_dir_reg/C is not reached by a timing clock
+The clock pin u_i2c_dri/scl_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/sda_out_reg/C is not reached by a timing clock
+The clock pin u_i2c_dri/sda_dir_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_i2c_dri/st_done_reg/C is not reached by a timing clock
+The clock pin u_i2c_dri/sda_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_i2c_dri/st_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#30 Critical Warning
 Non-clocked sequential cell  
 The clock pin u_i2c_dri/wr_flag_reg/C is not reached by a timing clock
 Related violations: <none>

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Sun Sep  4 12:00:41 2022
+| Date         : Mon Sep  5 03:01:40 2022
 | Host         : XPS-9520 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file bmp_top_control_sets_placed.rpt
 | Design       : bmp_top
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     4 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    16 |
+| Unused register locations in slices containing registers |    15 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,8 +58,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               6 |            1 |
-| No           | No                    | Yes                    |              33 |           14 |
+| No           | No                    | No                     |               7 |            2 |
+| No           | No                    | Yes                    |              33 |           16 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               1 |            1 |
@@ -70,13 +70,13 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------+-----------------------+--------------------------------+------------------+----------------+--------------+
-|    Clock Signal    |     Enable Signal     |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------------+-----------------------+--------------------------------+------------------+----------------+--------------+
-|  u_i2c_dri/dri_clk | u_i2c_dri/scl_i_1_n_0 | u_i2c_dri/cur_state[7]_i_2_n_0 |                1 |              1 |         1.00 |
-|  u_i2c_dri/dri_clk |                       |                                |                1 |              6 |         6.00 |
-|  sysclk_IBUF_BUFG  |                       | u_i2c_dri/cur_state[7]_i_2_n_0 |                3 |             11 |         3.67 |
-|  u_i2c_dri/dri_clk |                       | u_i2c_dri/cur_state[7]_i_2_n_0 |               11 |             22 |         2.00 |
-+--------------------+-----------------------+--------------------------------+------------------+----------------+--------------+
++-------------------------+-----------------------+--------------------------------+------------------+----------------+--------------+
+|       Clock Signal      |     Enable Signal     |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------+-----------------------+--------------------------------+------------------+----------------+--------------+
+|  u_i2c_dri/dri_clk_BUFG | u_i2c_dri/scl_i_1_n_0 | u_i2c_dri/cur_state[7]_i_2_n_0 |                1 |              1 |         1.00 |
+|  u_i2c_dri/dri_clk_BUFG |                       |                                |                2 |              7 |         3.50 |
+|  sysclk_IBUF_BUFG       |                       | u_i2c_dri/cur_state[7]_i_2_n_0 |                3 |             11 |         3.67 |
+|  u_i2c_dri/dri_clk_BUFG |                       | u_i2c_dri/cur_state[7]_i_2_n_0 |               13 |             22 |         1.69 |
++-------------------------+-----------------------+--------------------------------+------------------+----------------+--------------+
 
 
