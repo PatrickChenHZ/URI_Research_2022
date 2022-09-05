@@ -1,0 +1,28 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"2.29452",
+   "Default View_TopLeft":"-90,-360",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace inst sim_clk_gen_0 -pg 1 -lvl 1 -x 90 -y 80 -defaultsOSRD
+preplace inst i2c_m_4_0 -pg 1 -lvl 2 -x 470 -y -250 -defaultsOSRD
+preplace inst i2c_s_4_0 -pg 1 -lvl 2 -x 470 -y 70 -defaultsOSRD
+preplace inst iic_drive_0 -pg 1 -lvl 1 -x 90 -y -100 -defaultsOSRD
+preplace netloc i2c_m_4_0_O_done_flag 1 0 3 -70 -230 280J -140 630
+preplace netloc iic_drive_0_send_data 1 1 1 310 -200n
+preplace netloc iic_drive_0_send_dev_addr 1 1 1 270 -240n
+preplace netloc iic_drive_0_send_en 1 1 1 250 -260n
+preplace netloc iic_drive_0_send_reg_addr 1 1 1 300 -220n
+preplace netloc sim_clk_gen_0_clk 1 0 2 -80 -240 260
+preplace netloc sim_clk_gen_0_sync_rst 1 1 1 290 -280n
+levelinfo -pg 1 -100 90 470 650
+pagesize -pg 1 -db -bbox -sgen -100 -360 650 450
+"
+}
+{
+   "da_axi4_cnt":"5",
+   "da_board_cnt":"3",
+   "da_clkrst_cnt":"2",
+   "da_ps7_cnt":"1"
+}

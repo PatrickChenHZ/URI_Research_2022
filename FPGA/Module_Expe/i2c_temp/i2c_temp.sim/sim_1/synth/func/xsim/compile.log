@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado_prj/i2c_temp/i2c_temp.sim/sim_1/synth/func/xsim/design_1_wrapper_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_hw
+INFO: [VRFC 10-311] analyzing module design_hw_htu21_smp_0_0
+INFO: [VRFC 10-311] analyzing module design_hw_i2c_main_0_0
+INFO: [VRFC 10-311] analyzing module design_hw_proc_sys_reset_0_0
+INFO: [VRFC 10-311] analyzing module design_hw_processing_system7_0_0
+INFO: [VRFC 10-311] analyzing module design_hw_wrapper
+INFO: [VRFC 10-311] analyzing module glbl

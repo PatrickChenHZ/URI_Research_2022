@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="design_1_wrapper_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="design_1_wrapper" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="235.000001 us"></ZoomEndTime>
+      <Cursor1Time time="132.300000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="341"></NameColumnWidth>
+      <ValueColumnWidth column_width="161"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/design_1_wrapper/design_1_i/i2c_main_0/iic_sda" type="logic">
+      <obj_property name="ElementShortName">iic_sda</obj_property>
+      <obj_property name="ObjectShortName">iic_sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/i2c_main_0/iic_scl" type="logic">
+      <obj_property name="ElementShortName">iic_scl</obj_property>
+      <obj_property name="ObjectShortName">iic_scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/htu21_smp_0/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/i2c_main_0/mod_sta" type="array">
+      <obj_property name="ElementShortName">mod_sta[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mod_sta[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/i2c_main_0/mod_sta[3]" type="logic">
+      <obj_property name="ElementShortName">[3]</obj_property>
+      <obj_property name="ObjectShortName">[3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/htu21_smp_0/cmd" type="array">
+      <obj_property name="ElementShortName">cmd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/htu21_smp_0/cmd[1]" type="logic">
+      <obj_property name="ElementShortName">[1]</obj_property>
+      <obj_property name="ObjectShortName">[1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/htu21_smp_0/inst/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/design_1_wrapper/design_1_i/htu21_smp_0/iic_write" type="array">
+      <obj_property name="ElementShortName">iic_write[7:0]</obj_property>
+      <obj_property name="ObjectShortName">iic_write[7:0]</obj_property>
+   </wvobject>
+</wave_config>

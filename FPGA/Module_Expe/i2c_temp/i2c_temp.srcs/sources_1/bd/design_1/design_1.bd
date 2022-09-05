@@ -1,0 +1,258 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../i2c_temp.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.1"
+    },
+    "design_tree": {
+      "sim_clk_gen_0": "",
+      "i2c_m_4_0": "",
+      "i2c_s_4_0": "",
+      "iic_drive_0": ""
+    },
+    "components": {
+      "sim_clk_gen_0": {
+        "vlnv": "xilinx.com:ip:sim_clk_gen:1.0",
+        "xci_name": "design_1_sim_clk_gen_0_1",
+        "xci_path": "ip\\design_1_sim_clk_gen_0_1\\design_1_sim_clk_gen_0_1.xci",
+        "inst_hier_path": "sim_clk_gen_0"
+      },
+      "i2c_m_4_0": {
+        "vlnv": "xilinx.com:module_ref:i2c_m_4:1.0",
+        "xci_name": "design_1_i2c_m_4_0_0",
+        "xci_path": "ip\\design_1_i2c_m_4_0_0\\design_1_i2c_m_4_0_0.xci",
+        "inst_hier_path": "i2c_m_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2c_m_4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "I_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "I_rst_n",
+                "value_src": "constant"
+              }
+            }
+          },
+          "I_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "I_iic_send_en": {
+            "direction": "I"
+          },
+          "I_dev_addr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "I_word_addr": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "I_write_data": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "O_done_flag": {
+            "direction": "O"
+          },
+          "O_scl": {
+            "direction": "O"
+          },
+          "IO_sda": {
+            "direction": "IO"
+          }
+        }
+      },
+      "i2c_s_4_0": {
+        "vlnv": "xilinx.com:module_ref:i2c_s_4:1.0",
+        "xci_name": "design_1_i2c_s_4_0_0",
+        "xci_path": "ip\\design_1_i2c_s_4_0_0\\design_1_i2c_s_4_0_0.xci",
+        "inst_hier_path": "i2c_s_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2c_s_4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "I_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "I_rst_n",
+                "value_src": "constant"
+              }
+            }
+          },
+          "I_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "I_iic_recv_en": {
+            "direction": "I"
+          },
+          "I_dev_addr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "I_word_addr": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "O_read_data": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "O_done_flag": {
+            "direction": "O"
+          },
+          "O_scl": {
+            "direction": "O"
+          },
+          "IO_sda": {
+            "direction": "IO"
+          }
+        }
+      },
+      "iic_drive_0": {
+        "vlnv": "xilinx.com:module_ref:iic_drive:1.0",
+        "xci_name": "design_1_iic_drive_0_0",
+        "xci_path": "ip\\design_1_iic_drive_0_0\\design_1_iic_drive_0_0.xci",
+        "inst_hier_path": "iic_drive_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "iic_drive",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "send_done": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "send_en": {
+            "direction": "O"
+          },
+          "send_dev_addr": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "send_reg_addr": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "send_data": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "read_data": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "read_done": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "read_en": {
+            "direction": "O"
+          },
+          "read_dev_addr": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "read_reg_addr": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "mux": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "i2c_m_4_0_O_done_flag": {
+        "ports": [
+          "i2c_m_4_0/O_done_flag",
+          "iic_drive_0/send_done"
+        ]
+      },
+      "iic_drive_0_send_data": {
+        "ports": [
+          "iic_drive_0/send_data",
+          "i2c_m_4_0/I_write_data"
+        ]
+      },
+      "iic_drive_0_send_dev_addr": {
+        "ports": [
+          "iic_drive_0/send_dev_addr",
+          "i2c_m_4_0/I_dev_addr"
+        ]
+      },
+      "iic_drive_0_send_en": {
+        "ports": [
+          "iic_drive_0/send_en",
+          "i2c_m_4_0/I_iic_send_en"
+        ]
+      },
+      "iic_drive_0_send_reg_addr": {
+        "ports": [
+          "iic_drive_0/send_reg_addr",
+          "i2c_m_4_0/I_word_addr"
+        ]
+      },
+      "sim_clk_gen_0_clk": {
+        "ports": [
+          "sim_clk_gen_0/clk",
+          "i2c_m_4_0/I_clk",
+          "i2c_s_4_0/I_clk",
+          "iic_drive_0/clk"
+        ]
+      },
+      "sim_clk_gen_0_sync_rst": {
+        "ports": [
+          "sim_clk_gen_0/sync_rst",
+          "i2c_m_4_0/I_rst_n",
+          "i2c_s_4_0/I_rst_n"
+        ]
+      }
+    }
+  }
+}
