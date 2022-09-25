@@ -1,0 +1,39 @@
+Added Pin To Net: NetName=GND Pin=J-1
+Added Pin To Net: NetName=GND Pin=J-2
+Added Pin To Net: NetName=GND Pin=J-3
+Added Pin To Net: NetName=+5V Pin=J-7
+Added Pin To Net: NetName=+5V Pin=J-8
+Added Pin To Net: NetName=+3.3V Pin=J-9
+Added Pin To Net: NetName=BMP_SCL Pin=J-15
+Added Pin To Net: NetName=BMP_SDA Pin=J-16
+Added Pin To Net: NetName=MPU1_SCL Pin=J-17
+Added Pin To Net: NetName=MPU2_SCL Pin=J-19
+Added Pin To Net: NetName=+12V Pin=J-5
+Added Pin To Net: NetName=+12V Pin=J-6
+Added Net: Name=+12V
+Added Pin To Net: NetName=MPU1_SDA Pin=J-18
+Added Pin To Net: NetName=MPU1_SDA Pin=R3-2
+Added Pin To Net: NetName=MPU1_SDA Pin=U1-24
+Added Net: Name=MPU1_SDA
+Added Pin To Net: NetName=MPU2_SDA Pin=J-20
+Added Pin To Net: NetName=MPU2_SDA Pin=R9-2
+Added Pin To Net: NetName=MPU2_SDA Pin=U2-24
+Added Net: Name=MPU2_SDA
+Added Pin To Net: NetName=TEL_APM_RXD_U2 Pin=U4-27
+Added Net: Name=TEL_APM_RXD_U2
+Added Pin To Net: NetName=TEL_APM_TXD_U2 Pin=U4-28
+Added Net: Name=TEL_APM_TXD_U2
+Added Pin To Net: NetName=TEL_SENS_RXD_SWU2 Pin=J-12
+Added Pin To Net: NetName=TEL_SENS_RXD_SWU2 Pin=U4-33
+Added Net: Name=TEL_SENS_RXD_SWU2
+Added Pin To Net: NetName=TEL_SENS_TXD_SWU2 Pin=J-13
+Added Pin To Net: NetName=TEL_SENS_TXD_SWU2 Pin=U4-36
+Added Net: Name=TEL_SENS_TXD_SWU2
+Added Pin To Net: NetName=TEL_ZYNQ_RXD_SWU1 Pin=J-10
+Added Pin To Net: NetName=TEL_ZYNQ_RXD_SWU1 Pin=U4-30
+Added Net: Name=TEL_ZYNQ_RXD_SWU1
+Added Pin To Net: NetName=TEL_ZYNQ_TXD_SWU1 Pin=J-11
+Added Pin To Net: NetName=TEL_ZYNQ_TXD_SWU1 Pin=U4-31
+Added Net: Name=TEL_ZYNQ_TXD_SWU1
+Added Pin To Net: NetName=VIN Pin=J-40
+Added Net: Name=VIN

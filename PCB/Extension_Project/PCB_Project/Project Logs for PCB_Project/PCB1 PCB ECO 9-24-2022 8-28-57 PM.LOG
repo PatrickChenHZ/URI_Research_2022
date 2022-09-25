@@ -1,0 +1,5 @@
+Added Component: Designator=U6(PCBComponent_1)
+Added Member To Class: ClassName=Voltage_Regulators Member=Component C14 10uF
+Added Member To Class: ClassName=Voltage_Regulators Member=Component C15 10uF
+Added Member To Class: ClassName=Voltage_Regulators Member=Component U5 AMS1117-3.3
+Added Member To Class: ClassName=Voltage_Regulators Member=Component U6 Component_1
