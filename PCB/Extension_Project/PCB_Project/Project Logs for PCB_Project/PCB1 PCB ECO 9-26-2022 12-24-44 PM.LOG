@@ -1,0 +1,144 @@
+Removed Pin From Net: NetName=VIN Pin=J-40
+Added Component: Designator=D?(DO-41)
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "DO-204-AL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.fairchildsemi.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.fairchildsemi.com/ds/1N%2F1N4001.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "1998"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Diode, Axial; Body 5.2 x 2.7 mm (LxDia. max), Lead Dia. 0.86 mm (max)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "DO-41"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Aug-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=K?(RELAY_SRD-05VDC-SL-C)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "SRD-05VDC-SL-C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=P4(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P5(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P6(HDR1X6)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P7(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P8(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P9(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P10(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=Q3(TO-92A)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.fairchildsemi.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.fairchildsemi.com/ds/2N%2F2N3904.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "1997"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "15-Jan-2003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "PCB Footprint 'BCY-W3/D4.7' replaced"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "TO, Flat Index; 3 In-Line, Axial Leads; Body Dia. 4.5mm; Leads 0.51 x 0.48 mm (max)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "TO-92A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Sep-1998"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R20(J1-0603)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "29-May-2009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "IPC-7351 Footprint Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Chip Resistor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "J1-0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5V Pin=D?-2
+Added Pin To Net: NetName=+5V Pin=K?-A1
+Added Pin To Net: NetName=GND Pin=P4-1
+Added Pin To Net: NetName=+5 Pin=P4-4
+Added Pin To Net: NetName=GND Pin=P5-1
+Added Pin To Net: NetName=+5 Pin=P5-4
+Added Pin To Net: NetName=GND Pin=P6-6
+Added Pin To Net: NetName=GND Pin=P7-3
+Added Pin To Net: NetName=GND Pin=P9-3
+Added Pin To Net: NetName=GND Pin=P10-3
+Added Pin To Net: NetName=GND Pin=Q3-1
+Change Net Name : Old Net Name=VIN New Net Name=+12V
+Added Pin To Net: NetName=comp_scl Pin=J-25
+Added Pin To Net: NetName=comp_scl Pin=P5-3
+Added Net: Name=comp_scl
+Added Pin To Net: NetName=comp_sda Pin=J-26
+Added Pin To Net: NetName=comp_sda Pin=P5-2
+Added Net: Name=comp_sda
+Added Pin To Net: NetName=gps_rx Pin=J-27
+Added Pin To Net: NetName=gps_rx Pin=P4-2
+Added Net: Name=gps_rx
+Added Pin To Net: NetName=gps_tx Pin=J-28
+Added Pin To Net: NetName=gps_tx Pin=P4-3
+Added Net: Name=gps_tx
+Added Pin To Net: NetName=NetD?_1 Pin=D?-1
+Added Pin To Net: NetName=NetD?_1 Pin=K?-A2
+Added Pin To Net: NetName=NetD?_1 Pin=Q3-3
+Added Net: Name=NetD?_1
+Added Pin To Net: NetName=NetK?_COM Pin=K?-COM
+Added Pin To Net: NetName=NetK?_COM Pin=P10-1
+Added Net: Name=NetK?_COM
+Added Pin To Net: NetName=NetK?_NC Pin=K?-NC
+Added Pin To Net: NetName=NetK?_NC Pin=P9-1
+Added Net: Name=NetK?_NC
+Added Pin To Net: NetName=NetK?_NO Pin=K?-NO
+Added Pin To Net: NetName=NetK?_NO Pin=P7-1
+Added Pin To Net: NetName=NetK?_NO Pin=P8-2
+Added Net: Name=NetK?_NO
+Added Pin To Net: NetName=NetQ3_2 Pin=Q3-2
+Added Pin To Net: NetName=NetQ3_2 Pin=R20-2
+Added Net: Name=NetQ3_2
+Added Pin To Net: NetName=PPM_Switch_Sig Pin=J-35
+Added Pin To Net: NetName=PPM_Switch_Sig Pin=R20-1
+Added Net: Name=PPM_Switch_Sig
+Added Pin To Net: NetName=PWM_ALI1 Pin=J-32
+Added Pin To Net: NetName=PWM_ALI1 Pin=P6-2
+Added Net: Name=PWM_ALI1
+Added Pin To Net: NetName=PWM_ALI2 Pin=J-33
+Added Pin To Net: NetName=PWM_ALI2 Pin=P6-1
+Added Net: Name=PWM_ALI2
+Added Pin To Net: NetName=PWM_ELV Pin=J-30
+Added Pin To Net: NetName=PWM_ELV Pin=P6-4
+Added Net: Name=PWM_ELV
+Added Pin To Net: NetName=PWM_ESC Pin=J-29
+Added Pin To Net: NetName=PWM_ESC Pin=P6-5
+Added Net: Name=PWM_ESC
+Added Pin To Net: NetName=PWM_RUD Pin=J-31
+Added Pin To Net: NetName=PWM_RUD Pin=P6-3
+Added Net: Name=PWM_RUD
+Added Pin To Net: NetName=PYNQ_PPM Pin=J-34
+Added Pin To Net: NetName=PYNQ_PPM Pin=P8-1
+Added Net: Name=PYNQ_PPM
+Added Member To Class: ClassName=Sheet1 Member=Component D? Diode 1N4001
+Added Member To Class: ClassName=Sheet1 Member=Component K? SRD-05VDC-SL-C
+Added Member To Class: ClassName=Sheet1 Member=Component P4 GPS_Prim
+Added Member To Class: ClassName=Sheet1 Member=Component P5 Compass_Prim
+Added Member To Class: ClassName=Sheet1 Member=Component P6 PWM_PYNQ
+Added Member To Class: ClassName=Sheet1 Member=Component P7 PPM_PYNQ_Encoder
+Added Member To Class: ClassName=Sheet1 Member=Component P8 PPM_Jumper
+Added Member To Class: ClassName=Sheet1 Member=Component P9 PPM_REC
+Added Member To Class: ClassName=Sheet1 Member=Component P10 PPM_OUT
+Added Member To Class: ClassName=Sheet1 Member=Component Q3 BC547
+Added Member To Class: ClassName=Sheet1 Member=Component R20 0603

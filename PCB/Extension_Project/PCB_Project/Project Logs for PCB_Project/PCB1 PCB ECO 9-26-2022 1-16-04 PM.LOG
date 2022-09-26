@@ -1,0 +1,44 @@
+Added Component: Designator=J2(AMASS_XT60-M)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/XT60-M/AMASS/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "AMASS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "XT60-M"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Package"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/XT60-M/AMASS/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=P11(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U7(SOIC127P600X175-8N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "24LC256-I/SN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOIC-8 Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/24LC256-I/SN/Microchip/view-part/9771/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J2-N
+Added Pin To Net: NetName=+12V Pin=J2-P
+Added Pin To Net: NetName=GND Pin=U7-4
+Added Pin To Net: NetName=GND Pin=U7-7
+Added Pin To Net: NetName=+5V Pin=U7-8
+Added Pin To Net: NetName=EEPROM_SCL Pin=J-37
+Added Pin To Net: NetName=EEPROM_SCL Pin=U7-6
+Added Net: Name=EEPROM_SCL
+Added Pin To Net: NetName=EEPROM_SDA Pin=J-36
+Added Pin To Net: NetName=EEPROM_SDA Pin=U7-5
+Added Net: Name=EEPROM_SDA
+Added Pin To Net: NetName=NetJ_38 Pin=J-38
+Added Pin To Net: NetName=NetJ_38 Pin=P11-3
+Added Net: Name=NetJ_38
+Added Pin To Net: NetName=NetJ_39 Pin=J-39
+Added Pin To Net: NetName=NetJ_39 Pin=P11-2
+Added Net: Name=NetJ_39
+Added Pin To Net: NetName=NetJ_40 Pin=J-40
+Added Pin To Net: NetName=NetJ_40 Pin=P11-1
+Added Net: Name=NetJ_40
+Added Member To Class: ClassName=Voltage_Regulators Member=Component J2 XT60-M
+Added Member To Class: ClassName=Sheet1 Member=Component P11 GPIO
+Added Member To Class: ClassName=Sensors Member=Component U7 24LC256-I/SN

@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=VIN Pin=U6-1
+Added Pin To Net: NetName=VIN Pin=U6-2
+Added Pin To Net: NetName=GND Pin=U6-3
+Added Pin To Net: NetName=GND Pin=U6-4
+Added Pin To Net: NetName=+5V Pin=U6-5
+Added Pin To Net: NetName=+5V Pin=U6-6
+Added Pin To Net: NetName=GND Pin=U6-7
+Added Pin To Net: NetName=GND Pin=U6-8
