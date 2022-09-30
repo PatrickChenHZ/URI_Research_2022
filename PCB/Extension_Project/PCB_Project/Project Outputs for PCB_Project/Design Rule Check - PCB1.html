@@ -1,0 +1,656 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9/30/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:24:36 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc" class="file"><acronym title="D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc">D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">92</td></tr>
+</table>
+</td>
+</table><a name="IDQTXOBGDPK1IMENZBKEMLZRTJ5FO20BJATWQ4DOCLP05Q0A345D1M"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDV1GXRVTSNUHNL2TKTLXZBNBCSIF4GT2TF2UHYROWMUQYSI34YSYB">Clearance Constraint (Gap=6mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4Y1IT1VYWS42J4OFLQW0ERSUROPGM3DCGSRPJLGA1GKGWGYZWVFN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAT1TWR4SVDLNM3LO0W4L5L0DVKCW5XRZFHQYOJLHAJI4VGE2NIAB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2WRNCPVRBDC2IFKTSFLDLNTLBC1JAMKF2YK1I2GBRFNNZ5WJ5POO">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3S51IOF2TNCRK1VJR25KZJHCGMJHLP5F5M45ORNOBNKUBONTFARM">Width Constraint (Min=5mil) (Max=10mil) (Preferred=7mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1RSTZZ0IVLGJB42MJE3LBYR1UPGXOAF53S1MFBNJKPOOBUR4DVSP">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAST2COMJVCZGBXSBIWLGJMYUKM1TC0GM0TRMIKBCM1H0SM3KDA5G">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0VYYEDH5Z1TLIPRGQ55QJJW4ILN2FD0EHVEVUSE2WTMS0GACMZIC">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCMONJTTZWS5MPKHVWQ2LIMBSPOKIMQP55033PYKTVKFNILPIGVEB">Minimum Solder Mask Sliver (Gap=5mil) (All),(All)</a></td>
+<td class="column2">17</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPJ2DWNTUSSRLB2OVK54BHCIWDIFUI1AXKROV3LQGOBRTC1HM2YM">Silk To Solder Mask (Clearance=3mil) (IsPad),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZQYLUG2ZZTBTB0GWDKMSAI4H5KMA1YALZ1K10JM5QQJSS2EEDY1M">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3JEEEUXQ0PLAFWDZNGKBCDTDMH1CT0LC4HKZA5BZ5AXZF3O1LE1M">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYR1PMNFT1JKVFMP1WYHO4O3JOFFIKZUPTBKGSMEXGUXPFQY2215L">Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32'))</a></td>
+<td class="column2">14</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOEZPG20EQZNKJ4VGETE1TPB4TBITI2FZBVCCVBBVD5MNZFUZNUSP">Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1'))</a></td>
+<td class="column2">15</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN5HRDT02MJS5FZ5ZDUID0XZTTDYKF0LMHOVREABKGI2VYACH352N">Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (InComponentClass('Voltage_Regulators'))</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQCTUCIDNSCNXLH1MJYZXOST0FDBKP3L1WKX2ZM14MWR54EO5LLL">Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors'))</a></td>
+<td class="column2">28</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUVU0Z3S15OCHFQYNM0HQC4FITFU4A4RAZREKU3SXAP0MDYRUZO">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">92</td>
+</tr>
+</table><br><a name="IDAT1TWR4SVDLNM3LO0W4L5L0DVKCW5XRZFHQYOJLHAJI4VGE2NIAB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1650.291mil|Location2.X=1712.424mil|Location1.Y=1011.039mil|Location2.Y=1057.424mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1650.291mil|Location2.X=1712.424mil|Location1.Y=1011.039mil|Location2.Y=1057.424mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-20(1658.622mil,1040.826mil) on Top Layer And Pad U1-18(1695.826mil,1019.37mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3290.291mil|Location2.X=3352.424mil|Location1.Y=1006.039mil|Location2.Y=1052.424mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3290.291mil|Location2.X=3352.424mil|Location1.Y=1006.039mil|Location2.Y=1052.424mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U2-20(3298.622mil,1035.826mil) on Top Layer And Pad U2-18(3335.826mil,1014.37mil) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDAST2COMJVCZGBXSBIWLGJMYUKM1TC0GM0TRMIKBCM1H0SM3KDA5G"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=159.808mil|Location2.X=340.192mil|Location1.Y=2009.808mil|Location2.Y=2190.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=159.808mil|Location2.X=340.192mil|Location1.Y=2009.808mil|Location2.Y=2190.192mil|Absolute=True">Hole Size Constraint: (179.134mil &gt; 100mil) Pad J2-N(250mil,2100mil) on Multi-Layer Actual Hole Size = 179.134mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=159.808mil|Location2.X=340.192mil|Location1.Y=2293.272mil|Location2.Y=2473.656mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=159.808mil|Location2.X=340.192mil|Location1.Y=2293.272mil|Location2.Y=2473.656mil|Absolute=True">Hole Size Constraint: (179.134mil &gt; 100mil) Pad J2-P(250mil,2383.464mil) on Multi-Layer Actual Hole Size = 179.134mil</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID0VYYEDH5Z1TLIPRGQ55QJJW4ILN2FD0EHVEVUSE2WTMS0GACMZIC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole To Hole Clearance (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1873.132mil|Location2.X=1880.798mil|Location1.Y=1074.167mil|Location2.Y=1081.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1873.132mil|Location2.X=1880.798mil|Location1.Y=1074.167mil|Location2.Y=1081.833mil|Absolute=True">Hole To Hole Clearance Constraint: (Collision &lt; 10mil) Between Via (1876.93mil,1078mil) from Top Layer to Bottom Layer And Via (1877mil,1078mil) from Top Layer to Bottom Layer Pad/Via Touching Holes</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDCMONJTTZWS5MPKHVWQ2LIMBSPOKIMQP55033PYKTVKFNILPIGVEB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=5mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1560.717mil|Location2.X=1566.967mil|Location1.Y=701.875mil|Location2.Y=708.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1560.717mil|Location2.X=1566.967mil|Location1.Y=701.875mil|Location2.Y=708.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.315mil &lt; 5mil) Between Pad C1-1(1540mil,706.536mil) on Top Layer And Via (1592mil,705mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.315mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.045mil|Location2.X=4198.433mil|Location1.Y=1098.33mil|Location2.Y=1106.042mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.045mil|Location2.X=4198.433mil|Location1.Y=1098.33mil|Location2.Y=1106.042mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (2.516mil &lt; 5mil) Between Pad J-15(4215mil,1113.464mil) on Top Layer And Via (4169mil,1088mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [2.516mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.851mil|Location2.X=4238.101mil|Location1.Y=1120mil|Location2.Y=1126.25mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.851mil|Location2.X=4238.101mil|Location1.Y=1120mil|Location2.Y=1126.25mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.515mil &lt; 5mil) Between Pad J-16(4215mil,1133.15mil) on Top Layer And Via (4260mil,1110mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.515mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.71mil|Location2.X=4237.96mil|Location1.Y=1159.648mil|Location2.Y=1165.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.71mil|Location2.X=4237.96mil|Location1.Y=1159.648mil|Location2.Y=1165.898mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.186mil &lt; 5mil) Between Pad J-17(4215mil,1152.834mil) on Top Layer And Via (4261mil,1173mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.186mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.452mil|Location2.X=4240.096mil|Location1.Y=1612.259mil|Location2.Y=1619.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.452mil|Location2.X=4240.096mil|Location1.Y=1612.259mil|Location2.Y=1619.664mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (2.665mil &lt; 5mil) Between Pad J-40(4215mil,1605.59mil) on Top Layer And Via (4253.83mil,1639.5mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [2.665mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4397.19mil|Location2.X=4403.44mil|Location1.Y=2566.875mil|Location2.Y=2573.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4397.19mil|Location2.X=4403.44mil|Location1.Y=2566.875mil|Location2.Y=2573.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (2.63mil &lt; 5mil) Between Pad Q3-1(4420mil,2545mil) on Multi-Layer And Pad Q3-2(4420mil,2595mil) on Multi-Layer [Top Solder] Mask Sliver [2.63mil] / [Bottom Solder] Mask Sliver [2.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4397.19mil|Location2.X=4403.44mil|Location1.Y=2616.875mil|Location2.Y=2623.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4397.19mil|Location2.X=4403.44mil|Location1.Y=2616.875mil|Location2.Y=2623.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (2.63mil &lt; 5mil) Between Pad Q3-2(4420mil,2595mil) on Multi-Layer And Pad Q3-3(4420mil,2645mil) on Multi-Layer [Top Solder] Mask Sliver [2.63mil] / [Bottom Solder] Mask Sliver [2.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3238.375mil|Location2.X=3244.625mil|Location1.Y=784.793mil|Location2.Y=791.043mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3238.375mil|Location2.X=3244.625mil|Location1.Y=784.793mil|Location2.Y=791.043mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (2.164mil &lt; 5mil) Between Pad R10-2(3255mil,769.056mil) on Top Layer And Via (3241.5mil,817mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [2.164mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1509.784mil|Location2.X=1516.034mil|Location1.Y=1285.569mil|Location2.Y=1291.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1509.784mil|Location2.X=1516.034mil|Location1.Y=1285.569mil|Location2.Y=1291.819mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.792mil &lt; 5mil) Between Pad R3-1(1535mil,1269.056mil) on Top Layer And Via (1507mil,1318mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [3.792mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1709.643mil|Location2.X=1715.893mil|Location1.Y=947.9mil|Location2.Y=954.15mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1709.643mil|Location2.X=1715.893mil|Location1.Y=947.9mil|Location2.Y=954.15mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.475mil &lt; 5mil) Between Pad U1-14(1695.826mil,956.378mil) on Top Layer And Via (1739.56mil,940.63mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [1.476mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3222.918mil|Location2.X=3229.168mil|Location1.Y=897.384mil|Location2.Y=903.634mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3222.918mil|Location2.X=3229.168mil|Location1.Y=897.384mil|Location2.Y=903.634mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.222mil &lt; 5mil) Between Pad U2-7(3235.63mil,914.174mil) on Top Layer And Via (3198mil,891mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [3.222mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.537mil|Location2.X=2547.787mil|Location1.Y=711.284mil|Location2.Y=717.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.537mil|Location2.X=2547.787mil|Location1.Y=711.284mil|Location2.Y=717.534mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 5mil) Between Pad U3-1(2558.504mil,701.614mil) on Top Layer And Pad U3-2(2558.504mil,727.204mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.537mil|Location2.X=2547.787mil|Location1.Y=736.875mil|Location2.Y=743.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.537mil|Location2.X=2547.787mil|Location1.Y=736.875mil|Location2.Y=743.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.813mil &lt; 5mil) Between Pad U3-2(2558.504mil,727.204mil) on Top Layer And Pad U3-3(2558.504mil,752.796mil) on Top Layer [Top Solder] Mask Sliver [3.813mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.537mil|Location2.X=2547.787mil|Location1.Y=762.466mil|Location2.Y=768.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.537mil|Location2.X=2547.787mil|Location1.Y=762.466mil|Location2.Y=768.716mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 5mil) Between Pad U3-3(2558.504mil,752.796mil) on Top Layer And Pad U3-4(2558.504mil,778.386mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.528mil|Location2.X=2610.778mil|Location1.Y=762.466mil|Location2.Y=768.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.528mil|Location2.X=2610.778mil|Location1.Y=762.466mil|Location2.Y=768.716mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 5mil) Between Pad U3-5(2621.496mil,778.386mil) on Top Layer And Pad U3-6(2621.496mil,752.796mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.528mil|Location2.X=2610.778mil|Location1.Y=736.875mil|Location2.Y=743.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.528mil|Location2.X=2610.778mil|Location1.Y=736.875mil|Location2.Y=743.125mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.813mil &lt; 5mil) Between Pad U3-6(2621.496mil,752.796mil) on Top Layer And Pad U3-7(2621.496mil,727.204mil) on Top Layer [Top Solder] Mask Sliver [3.813mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.528mil|Location2.X=2610.778mil|Location1.Y=711.284mil|Location2.Y=717.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.528mil|Location2.X=2610.778mil|Location1.Y=711.284mil|Location2.Y=717.534mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 5mil) Between Pad U3-7(2621.496mil,727.204mil) on Top Layer And Pad U3-8(2621.496mil,701.614mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPJ2DWNTUSSRLB2OVK54BHCIWDIFUI1AXKROV3LQGOBRTC1HM2YM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=3mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=292.583mil|Location2.X=296.833mil|Location1.Y=1294.856mil|Location2.Y=1299.106mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=292.583mil|Location2.X=296.833mil|Location1.Y=1294.856mil|Location2.Y=1299.106mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.584mil &lt; 3mil) Between Pad U5-1(340mil,1310mil) on Top Layer And Text "C15" (138.465mil,1237mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.584mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDZQYLUG2ZZTBTB0GWDKMSAI4H5KMA1YALZ1K10JM5QQJSS2EEDY1M"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4338.919mil|Location2.X=4350.169mil|Location1.Y=2664.831mil|Location2.Y=2676.081mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4338.919mil|Location2.X=4350.169mil|Location1.Y=2664.831mil|Location2.Y=2676.081mil|Absolute=True">Silk To Silk Clearance Constraint: (9.956mil &lt; 10mil) Between Arc (4420mil,2595mil) on Top Overlay And Text "Q3" (4240.016mil,2670.01mil) on Top Overlay Silk Text to Silk Clearance [9.956mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3639.851mil|Location2.X=3647.518mil|Location1.Y=2636.176mil|Location2.Y=2643.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3639.851mil|Location2.X=3647.518mil|Location1.Y=2636.176mil|Location2.Y=2643.843mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "K1" (3560.013mil,2640.01mil) on Top Overlay And Track (3644.882mil,1969.016mil)(3644.882mil,2720.984mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.167mil|Location2.X=1148.833mil|Location1.Y=1950.106mil|Location2.Y=1957.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.167mil|Location2.X=1148.833mil|Location1.Y=1950.106mil|Location2.Y=1957.773mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "OUT-" (1145mil,1950.315mil) on Top Overlay And Track (1115mil,1950mil)(1315mil,1950mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=726.167mil|Location2.X=733.833mil|Location1.Y=1950.106mil|Location2.Y=1957.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=726.167mil|Location2.X=733.833mil|Location1.Y=1950.106mil|Location2.Y=1957.773mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "OUT+" (730mil,1950.315mil) on Top Overlay And Track (695mil,1950mil)(895mil,1950mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4237.173mil|Location2.X=4244.84mil|Location1.Y=2717.151mil|Location2.Y=2724.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4237.173mil|Location2.X=4244.84mil|Location1.Y=2717.151mil|Location2.Y=2724.817mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "Q3" (4240.016mil,2670.01mil) on Top Overlay And Track (3644.882mil,2720.984mil)(4255.118mil,2720.984mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4249.982mil|Location2.X=4257.649mil|Location1.Y=2666.176mil|Location2.Y=2673.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4249.982mil|Location2.X=4257.649mil|Location1.Y=2666.176mil|Location2.Y=2673.843mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "Q3" (4240.016mil,2670.01mil) on Top Overlay And Track (4255.118mil,1969.016mil)(4255.118mil,2720.984mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3320.387mil|Location2.X=3331.637mil|Location1.Y=811.253mil|Location2.Y=822.503mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3320.387mil|Location2.X=3331.637mil|Location1.Y=811.253mil|Location2.Y=822.503mil|Absolute=True">Silk To Silk Clearance Constraint: (9.925mil &lt; 10mil) Between Text "R10" (3231mil,809.528mil) on Top Overlay And Text "R6" (3331mil,809.528mil) on Top Overlay Silk Text to Silk Clearance [9.925mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYR1PMNFT1JKVFMP1WYHO4O3JOFFIKZUPTBKGSMEXGUXPFQY2215L"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1481.22mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2747.677mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1481.22mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2747.677mil|Absolute=True">Room Definition: Between Component S1-TS02-66-73-BK-100-SCR-D (1672.047mil,2618.583mil) on Top Layer And Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2946.535mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2729.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2946.535mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2729.094mil|Absolute=True">Room Definition: Between Component S2-TS02-66-73-BK-100-SCR-D (3115mil,2600mil) on Top Layer And Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.425mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2712.795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1968.425mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2712.795mil|Absolute=True">Room Definition: Between Component U4-ESP32-WROOM-32 (2370mil,2200mil) on Top Layer And Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1466.063mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2173.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1466.063mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2173.937mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SIP Component P1-ESP_UART (1520mil,1820mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1763.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2420.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1763.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2420.331mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component C10-1uF/10V (1795mil,2353.465mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1653.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2416.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1653.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2416.866mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component C11-1nF/50V(10%) (1685mil,2350mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2833.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2680.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2833.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2680.331mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component C12-1uF/10V (2865mil,2613.465mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1883.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2655.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1883.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2655.331mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component C13-1uF/10V (1915mil,2588.465mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1873.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2423.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1873.173mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2423.401mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component C9-100uF/6.3V (1905mil,2356.535mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2861.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2443.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2861.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2443.622mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component R15-Res3 (2910.472mil,2420mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2521.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=1558.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2521.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=1558.622mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component R16-Res3 (2570.472mil,1535mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.787mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2318.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2855.787mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2318.622mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component R17-Res3 (2905mil,2295mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3041.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2448.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3041.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2448.622mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component R18-Res3 (3090.472mil,2425mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1506.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2448.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1506.26mil|Location2.X=8390mil|Location1.Y=0mil|Location2.Y=2448.622mil|Absolute=True">Room Definition: Between Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (InComponentClass('ESP32')) And SMT Small Component R19-Res3 (1555.472mil,2425mil) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDOEZPG20EQZNKJ4VGETE1TPB4TBITI2FZBVCCVBBVD5MNZFUZNUSP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3634.055mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2731.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3634.055mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2731.811mil|Absolute=True">Room Definition: Between Component K1-SRD-05VDC-SL-C (3950mil,2345mil) on Top Layer And Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=1061.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=1061.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And SIP Component P2-Lidar_F (1070mil,1115mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=1426.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=1426.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And SIP Component P3-Lidar_B (1070mil,1480mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=681.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=681.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And SIP Component P4-GPS_Prim (1070mil,735mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=346.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=716.063mil|Location2.X=8030mil|Location1.Y=346.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And SIP Component P5-Compass_Prim (1070mil,400mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2426.063mil|Location2.X=8030mil|Location1.Y=226.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2426.063mil|Location2.X=8030mil|Location1.Y=226.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And SIP Component P6-PWM_PYNQ (2480mil,280mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4365.945mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4365.945mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And Small Component D1-Diode 1N4001 (4425mil,2180mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3931.063mil|Location2.X=8030mil|Location1.Y=81.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3931.063mil|Location2.X=8030mil|Location1.Y=81.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And Small Component P10-PPM_OUT (3985mil,135mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2026.063mil|Location2.X=8030mil|Location1.Y=231.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2026.063mil|Location2.X=8030mil|Location1.Y=231.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And Small Component P11-GPIO (2080mil,285mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3426.063mil|Location2.X=8030mil|Location1.Y=66.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3426.063mil|Location2.X=8030mil|Location1.Y=66.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And Small Component P7-PPM_PYNQ_Encoder (3480mil,120mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3176.063mil|Location2.X=8030mil|Location1.Y=111.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3176.063mil|Location2.X=8030mil|Location1.Y=111.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And Small Component P8-PPM_Jumper (3230mil,265mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4241.063mil|Location2.X=8030mil|Location1.Y=76.063mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4241.063mil|Location2.X=8030mil|Location1.Y=76.063mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And Small Component P9-PPM_REC (4295mil,130mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4318.267mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2696.733mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4318.267mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2696.733mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And Small Component Q3-BC547 (4420mil,2595mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4161.85mil|Location2.X=8030mil|Location1.Y=777.835mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4161.85mil|Location2.X=8030mil|Location1.Y=777.835mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And SMT SIP Component J-FFC2B28-40-G (4264.213mil,1221.732mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4291.378mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2485mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4291.378mil|Location2.X=8030mil|Location1.Y=1570mil|Location2.Y=2485mil|Absolute=True">Room Definition: Between Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (InComponentClass('Sheet1')) And SMT Small Component R20-0603 (4315mil,2150mil) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDN5HRDT02MJS5FZ5ZDUID0XZTTDYKF0LMHOVREABKGI2VYACH352N"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (InComponentClass('Voltage_Regulators'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=48.685mil|Location2.X=6880mil|Location1.Y=1282mil|Location2.Y=3630mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=48.685mil|Location2.X=6880mil|Location1.Y=1282mil|Location2.Y=3630mil|Absolute=True">Room Definition: Between Component U5-AMS1117-3.3 (218mil,1401mil) on Top Layer And Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (InComponentClass('Voltage_Regulators')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=670mil|Location2.X=6880mil|Location1.Y=1825mil|Location2.Y=3630mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=670mil|Location2.X=6880mil|Location1.Y=1825mil|Location2.Y=3630mil|Absolute=True">Room Definition: Between DIP Component U6-Component_1 (990mil,2560mil) on Top Layer And Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (InComponentClass('Voltage_Regulators')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=79.725mil|Location2.X=6880mil|Location1.Y=1865.217mil|Location2.Y=3630mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=79.725mil|Location2.X=6880mil|Location1.Y=1865.217mil|Location2.Y=3630mil|Absolute=True">Room Definition: Between Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (InComponentClass('Voltage_Regulators')) And Small Component J2-XT60-M (250mil,2241.732mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=139.669mil|Location2.X=6880mil|Location1.Y=1593.173mil|Location2.Y=3630mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=139.669mil|Location2.X=6880mil|Location1.Y=1593.173mil|Location2.Y=3630mil|Absolute=True">Room Definition: Between Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (InComponentClass('Voltage_Regulators')) And SMT Small Component C14-10uF (206.535mil,1625mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=128.134mil|Location2.X=6880mil|Location1.Y=1143.173mil|Location2.Y=3630mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=128.134mil|Location2.X=6880mil|Location1.Y=1143.173mil|Location2.Y=3630mil|Absolute=True">Room Definition: Between Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (InComponentClass('Voltage_Regulators')) And SMT Small Component C15-10uF (195mil,1175mil) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDQCTUCIDNSCNXLH1MJYZXOST0FDBKP3L1WKX2ZM14MWR54EO5LLL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1514.331mil|Location2.X=10145mil|Location1.Y=895.748mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1514.331mil|Location2.X=10145mil|Location1.Y=895.748mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between LCC Component U1-MPU-9250 (1635mil,980mil) on Top Layer And Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3154.331mil|Location2.X=10145mil|Location1.Y=890.748mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3154.331mil|Location2.X=10145mil|Location1.Y=890.748mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between LCC Component U2-MPU-9250 (3275mil,975mil) on Top Layer And Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.173mil|Location2.X=10145mil|Location1.Y=673.134mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.173mil|Location2.X=10145mil|Location1.Y=673.134mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C1-0.1uF (1540mil,740mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.599mil|Location2.X=10145mil|Location1.Y=988.173mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.599mil|Location2.X=10145mil|Location1.Y=988.173mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C2-0.1uF (1843.465mil,1020mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1774.669mil|Location2.X=10145mil|Location1.Y=898.173mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1774.669mil|Location2.X=10145mil|Location1.Y=898.173mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C3-0.01uF (1841.535mil,930mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3138.173mil|Location2.X=10145mil|Location1.Y=671.598mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3138.173mil|Location2.X=10145mil|Location1.Y=671.598mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C4-0.1uF (3170mil,738.465mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3419.669mil|Location2.X=10145mil|Location1.Y=898.173mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3419.669mil|Location2.X=10145mil|Location1.Y=898.173mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C5-0.01uF (3486.535mil,930mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3419.669mil|Location2.X=10145mil|Location1.Y=988.173mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3419.669mil|Location2.X=10145mil|Location1.Y=988.173mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C6-0.1uF (3486.535mil,1020mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.173mil|Location2.X=10145mil|Location1.Y=676.598mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.173mil|Location2.X=10145mil|Location1.Y=676.598mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C7-10uF (2375mil,743.465mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2473.173mil|Location2.X=10145mil|Location1.Y=1049.669mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2473.173mil|Location2.X=10145mil|Location1.Y=1049.669mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component C8-10uF (2505mil,1116.535mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2177.087mil|Location2.X=10145mil|Location1.Y=1038.543mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2177.087mil|Location2.X=10145mil|Location1.Y=1038.543mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component Q1-BSS138 (2245mil,1135mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.488mil|Location2.X=10145mil|Location1.Y=1040.276mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2604.488mil|Location2.X=10145mil|Location1.Y=1040.276mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component Q2-BSS138 (2672.402mil,1136.732mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3231.378mil|Location2.X=10145mil|Location1.Y=690.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3231.378mil|Location2.X=10145mil|Location1.Y=690.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R10-Res3 (3255mil,739.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2316.26mil|Location2.X=10145mil|Location1.Y=946.378mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2316.26mil|Location2.X=10145mil|Location1.Y=946.378mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R11-Res3 (2365.472mil,970mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2741.26mil|Location2.X=10145mil|Location1.Y=961.378mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2741.26mil|Location2.X=10145mil|Location1.Y=961.378mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R12-Res3 (2790.472mil,985mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.315mil|Location2.X=10145mil|Location1.Y=1210mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.315mil|Location2.X=10145mil|Location1.Y=1210mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R13-Res3 (2359.528mil,1255mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2741.26mil|Location2.X=10145mil|Location1.Y=1210mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2741.26mil|Location2.X=10145mil|Location1.Y=1210mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R14-Res3 (2790.472mil,1265mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1696.378mil|Location2.X=10145mil|Location1.Y=685.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1696.378mil|Location2.X=10145mil|Location1.Y=685.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R1-Res3 (1720mil,734.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1596.378mil|Location2.X=10145mil|Location1.Y=1190.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1596.378mil|Location2.X=10145mil|Location1.Y=1190.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R2-Res3 (1620mil,1239.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1511.378mil|Location2.X=10145mil|Location1.Y=1190.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1511.378mil|Location2.X=10145mil|Location1.Y=1190.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R3-Res3 (1535mil,1239.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1681.378mil|Location2.X=10145mil|Location1.Y=1190.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1681.378mil|Location2.X=10145mil|Location1.Y=1190.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R4-Res3 (1705mil,1239.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.378mil|Location2.X=10145mil|Location1.Y=685.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.378mil|Location2.X=10145mil|Location1.Y=685.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R5-Res3 (1640mil,734.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3331.378mil|Location2.X=10145mil|Location1.Y=690.788mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3331.378mil|Location2.X=10145mil|Location1.Y=690.788mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R6-Res3 (3355mil,740mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3236.378mil|Location2.X=10145mil|Location1.Y=1185.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3236.378mil|Location2.X=10145mil|Location1.Y=1185.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R7-Res3 (3260mil,1234.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3151.378mil|Location2.X=10145mil|Location1.Y=1185.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3151.378mil|Location2.X=10145mil|Location1.Y=1185.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R8-Res3 (3175mil,1234.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3321.378mil|Location2.X=10145mil|Location1.Y=1185.315mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3321.378mil|Location2.X=10145mil|Location1.Y=1185.315mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SMT Small Component R9-Res3 (3345mil,1234.528mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2515.394mil|Location2.X=10145mil|Location1.Y=679.961mil|Location2.Y=1520mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2515.394mil|Location2.X=10145mil|Location1.Y=679.961mil|Location2.Y=1520mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SOIC Component U3-BMP280 (2590mil,740mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3121mil|Location2.X=10145mil|Location1.Y=1210mil|Location2.Y=1856mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Github\URI_Research_2022\PCB\Extension_Project\PCB_Project\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3121mil|Location2.X=10145mil|Location1.Y=1210mil|Location2.Y=1856mil|Absolute=True">Room Definition: Between Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (InComponentClass('Sensors')) And SOIC Component U7-24LC256-I/SN (3220mil,1720mil) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
