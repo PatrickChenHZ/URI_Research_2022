@@ -1,0 +1,3 @@
+Added Pin To Net: NetName=+12V Pin=J-5
+Added Pin To Net: NetName=+12V Pin=J-6
+Change Net Name : Old Net Name=+12V New Net Name=VIN

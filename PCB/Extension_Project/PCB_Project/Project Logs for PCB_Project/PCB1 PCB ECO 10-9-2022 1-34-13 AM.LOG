@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=+12V Pin=J2-P
+Removed Pin From Net: NetName=+12V Pin=U6-1
+Removed Pin From Net: NetName=+12V Pin=U6-2
+Removed Pin From Net: NetName=GND Pin=U6-3
+Removed Pin From Net: NetName=GND Pin=U6-4
+Removed Pin From Net: NetName=GND Pin=U6-5
+Removed Pin From Net: NetName=GND Pin=U6-6
+Removed Pin From Net: NetName=+5V Pin=U6-7
+Removed Pin From Net: NetName=+5V Pin=U6-8
+Removed Member From Class: ClassName=Voltage_Regulators Member=U6
+Added Component: Designator=*(PCBComponent_1)
+Added Pin To Net: NetName=GND Pin=*-1
+Added Pin To Net: NetName=GND Pin=*-2
+Added Pin To Net: NetName=GND Pin=*-5
+Added Pin To Net: NetName=GND Pin=*-6
+Added Pin To Net: NetName=+5V Pin=*-7
+Added Pin To Net: NetName=+5V Pin=*-8
+Added Pin To Net: NetName=+12V Pin=J-5
+Added Pin To Net: NetName=+12V Pin=J-6
+Added Pin To Net: NetName=VIN Pin=*-3
+Added Pin To Net: NetName=VIN Pin=*-4
+Added Pin To Net: NetName=VIN Pin=J2-P
+Added Net: Name=VIN
+Added Member To Class: ClassName=Voltage_Regulators Member=Component * Component_1
