@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=ESP_DEBUG_RXD Pin=P1-4
+Removed Pin From Net: NetName=ESP_DEBUG_RXD Pin=U4-35
+Added Pin To Net: NetName=ESP_DEBUG_TXD Pin=P1-4
+Added Pin To Net: NetName=ESP_DEBUG_TXD Pin=U4-35
+Added Net: Name=ESP_DEBUG_TXD
+Added Member To Class: ClassName=Sheet1 Member=Component P7 PPM_PYNQ_Encoder

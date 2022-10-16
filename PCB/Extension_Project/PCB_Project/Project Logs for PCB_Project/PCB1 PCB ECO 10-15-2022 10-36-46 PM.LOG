@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=MPU2_SCL Pin=R10-2
+Removed Pin From Net: NetName=MPU2_SCL Pin=U2-9
+Added Pin To Net: NetName=NetR10_2 Pin=R10-2
+Added Pin To Net: NetName=NetR10_2 Pin=U2-9
+Added Net: Name=NetR10_2
+Added Member To Class: ClassName=Sheet1 Member=Component P7 PPM_PYNQ_Encoder
