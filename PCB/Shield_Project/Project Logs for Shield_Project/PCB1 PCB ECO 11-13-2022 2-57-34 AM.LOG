@@ -1,0 +1,112 @@
+Removed Pin From Net: NetName=NetJ1_23 Pin=P2-1
+Removed Pin From Net: NetName=NetJ1_22 Pin=P2-2
+Removed Pin From Net: NetName=NetJ1_21 Pin=P2-3
+Removed Pin From Net: NetName=NetJ1_20 Pin=P2-4
+Removed Pin From Net: NetName=NetJ1_19 Pin=P2-5
+Removed Pin From Net: NetName=NetJ1_18 Pin=P2-6
+Removed Pin From Net: NetName=NetJ1_17 Pin=P2-7
+Removed Pin From Net: NetName=NetJ1_16 Pin=P2-8
+Added Component: Designator=P4(HDR1X6)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P5(HDR1X8)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P6(MHDR1X10)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P7(HDR1X8)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetJ1_16 Pin=P2-1
+Added Pin To Net: NetName=NetJ1_17 Pin=P2-2
+Added Pin To Net: NetName=NetJ1_18 Pin=P2-3
+Added Pin To Net: NetName=NetJ1_19 Pin=P2-4
+Added Pin To Net: NetName=NetJ1_20 Pin=P2-5
+Added Pin To Net: NetName=NetJ1_21 Pin=P2-6
+Added Pin To Net: NetName=NetJ1_22 Pin=P2-7
+Added Pin To Net: NetName=NetJ1_23 Pin=P2-8
+Added Pin To Net: NetName=GND Pin=P5-7
+Added Pin To Net: NetName=GND Pin=P5-8
+Added Pin To Net: NetName=GND Pin=P6-7
+Added Pin To Net: NetName=NetJ1_7 Pin=J1-7
+Added Pin To Net: NetName=NetJ1_7 Pin=J1-8
+Added Pin To Net: NetName=NetJ1_7 Pin=P5-6
+Added Net: Name=NetJ1_7
+Added Pin To Net: NetName=NetJ1_9 Pin=J1-9
+Added Pin To Net: NetName=NetJ1_9 Pin=P5-5
+Added Net: Name=NetJ1_9
+Added Pin To Net: NetName=NetJ1_10 Pin=J1-10
+Added Pin To Net: NetName=NetJ1_10 Pin=P4-6
+Added Net: Name=NetJ1_10
+Added Pin To Net: NetName=NetJ1_11 Pin=J1-11
+Added Pin To Net: NetName=NetJ1_11 Pin=P4-5
+Added Net: Name=NetJ1_11
+Added Pin To Net: NetName=NetJ1_12 Pin=J1-12
+Added Pin To Net: NetName=NetJ1_12 Pin=P4-4
+Added Net: Name=NetJ1_12
+Added Pin To Net: NetName=NetJ1_13 Pin=J1-13
+Added Pin To Net: NetName=NetJ1_13 Pin=P4-3
+Added Net: Name=NetJ1_13
+Added Pin To Net: NetName=NetJ1_14 Pin=J1-14
+Added Pin To Net: NetName=NetJ1_14 Pin=P4-2
+Added Net: Name=NetJ1_14
+Added Pin To Net: NetName=NetJ1_15 Pin=J1-15
+Added Pin To Net: NetName=NetJ1_15 Pin=P4-1
+Added Net: Name=NetJ1_15
+Added Pin To Net: NetName=NetJ1_24 Pin=J1-24
+Added Pin To Net: NetName=NetJ1_24 Pin=P6-10
+Added Net: Name=NetJ1_24
+Added Pin To Net: NetName=NetJ1_25 Pin=J1-25
+Added Pin To Net: NetName=NetJ1_25 Pin=P6-9
+Added Net: Name=NetJ1_25
+Added Pin To Net: NetName=NetJ1_27 Pin=J1-27
+Added Pin To Net: NetName=NetJ1_27 Pin=P7-1
+Added Net: Name=NetJ1_27
+Added Pin To Net: NetName=NetJ1_28 Pin=J1-28
+Added Pin To Net: NetName=NetJ1_28 Pin=P7-2
+Added Net: Name=NetJ1_28
+Added Pin To Net: NetName=NetJ1_29 Pin=J1-29
+Added Pin To Net: NetName=NetJ1_29 Pin=P7-3
+Added Net: Name=NetJ1_29
+Added Pin To Net: NetName=NetJ1_30 Pin=J1-30
+Added Pin To Net: NetName=NetJ1_30 Pin=P7-4
+Added Net: Name=NetJ1_30
+Added Pin To Net: NetName=NetJ1_31 Pin=J1-31
+Added Pin To Net: NetName=NetJ1_31 Pin=P7-6
+Added Net: Name=NetJ1_31
+Added Pin To Net: NetName=NetJ1_32 Pin=J1-32
+Added Pin To Net: NetName=NetJ1_32 Pin=P7-5
+Added Net: Name=NetJ1_32
+Added Pin To Net: NetName=NetJ1_33 Pin=J1-33
+Added Pin To Net: NetName=NetJ1_33 Pin=P7-8
+Added Net: Name=NetJ1_33
+Added Pin To Net: NetName=NetJ1_34 Pin=J1-34
+Added Pin To Net: NetName=NetJ1_34 Pin=P7-7
+Added Net: Name=NetJ1_34
+Added Pin To Net: NetName=NetJ1_35 Pin=J1-35
+Added Pin To Net: NetName=NetJ1_35 Pin=P6-1
+Added Net: Name=NetJ1_35
+Added Pin To Net: NetName=NetJ1_36 Pin=J1-36
+Added Pin To Net: NetName=NetJ1_36 Pin=P6-2
+Added Net: Name=NetJ1_36
+Added Pin To Net: NetName=NetJ1_37 Pin=J1-37
+Added Pin To Net: NetName=NetJ1_37 Pin=P6-3
+Added Net: Name=NetJ1_37
+Added Pin To Net: NetName=NetJ1_38 Pin=J1-38
+Added Pin To Net: NetName=NetJ1_38 Pin=P6-4
+Added Net: Name=NetJ1_38
+Added Pin To Net: NetName=NetJ1_39 Pin=J1-39
+Added Pin To Net: NetName=NetJ1_39 Pin=P6-5
+Added Net: Name=NetJ1_39
+Added Pin To Net: NetName=NetJ1_40 Pin=J1-40
+Added Pin To Net: NetName=NetJ1_40 Pin=P6-6
+Added Net: Name=NetJ1_40
+Added Member To Class: ClassName=Sheet1 Member=Component P4 Header 6
+Added Member To Class: ClassName=Sheet1 Member=Component P5 Header 8
+Added Member To Class: ClassName=Sheet1 Member=Component P6 MHDR1X10
+Added Member To Class: ClassName=Sheet1 Member=Component P7 Header 8

@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=J1-S1
+Removed Pin From Net: NetName=GND Pin=J1-S2
+Added Pin To Net: NetName=GND Pin=U3-1
+Added Pin To Net: NetName=GND Pin=U3-5
+Added Member To Class: ClassName=Sheet1 Member=Component P7 PPM_PYNQ_Encoder
+Added Member To Class: ClassName=Voltage_Regulators Member=Component U3 Component_1

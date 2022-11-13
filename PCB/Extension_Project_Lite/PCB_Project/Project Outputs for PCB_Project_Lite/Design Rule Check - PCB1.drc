@@ -1,0 +1,62 @@
+Protel Design System Design Rule Check
+PCB File : D:\Github\URI_Research_2022\PCB\Extension_Project_Lite\PCB_Project\PCB1.PcbDoc
+Date     : 10/25/2022
+Time     : 6:05:36 PM
+
+Processing Rule : Clearance Constraint (Gap=6mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=4.5mil) (Max=15mil) (Preferred=6mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+   Violation between Hole Size Constraint: (179.134mil > 100mil) Pad J2-N(200mil,2130mil) on Multi-Layer Actual Hole Size = 179.134mil
+   Violation between Hole Size Constraint: (179.134mil > 100mil) Pad J2-P(200mil,2413.464mil) on Multi-Layer Actual Hole Size = 179.134mil
+Rule Violations :2
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=3.8mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=3mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=5mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Room ESP32 (Bounding Region = (4665mil, 0mil, 8390mil, 1160mil) (Disabled)(InComponentClass('ESP32'))
+Rule Violations :0
+
+Processing Rule : Room Sheet1 (Bounding Region = (4665mil, 1570mil, 8030mil, 2485mil) (Disabled)(InComponentClass('Sheet1'))
+Rule Violations :0
+
+Processing Rule : Room Voltage_Regulators (Bounding Region = (4665mil, 2535mil, 6880mil, 3630mil) (Disabled)(InComponentClass('Voltage_Regulators'))
+Rule Violations :0
+
+Processing Rule : Room Sensors (Bounding Region = (4665mil, 1210mil, 10145mil, 1520mil) (Disabled)(InComponentClass('Sensors'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 2
+Waived Violations : 0
+Time Elapsed        : 00:00:01
