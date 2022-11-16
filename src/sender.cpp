@@ -1,7 +1,8 @@
 #include <Arduino.h>
 #include <esp_now.h>    //quote around local lib names, brackets around pio built in lib names
 #include <WiFi.h>
-#include <SoftwareSerial.h>
+#include "SoftwareSerial.h"
+#include <HardwareSerial.h>
 
 #define arduRX   16  // hardware serial (Serial2)
 #define arduTX   17
@@ -30,13 +31,13 @@ esp_now_peer_info_t peerInfo; // create peer (slave) interface
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
   Serial.print("\r\nLast Packet Send Status:\t");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-  // Serial.println(xPortGetCoreID());
-  return;
 }
 
 bool toPynqNew = 0;
+char toPynqArr[200];
 void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
   memcpy(&myData, incomingData, sizeof(myData));
+  memcpy(&toPynqArr, myData.data, sizeof(toPynqArr));
   toPynqNew = 1;
 }
 
@@ -45,10 +46,8 @@ TaskHandle_t RecvPynqHandle;
 TaskHandle_t RecvArduHandle;
 TaskHandle_t SendHandle;
 
-//SoftwareSerial SerialSens;
-SoftwareSerial SerialPynq;
-//SoftwareSerial SerialArdu;
-//HardwareSerial SerialPynq(1);
+HardwareSerial SerialSens(1); // PARAMETERS TBD
+SoftwareSerial SerialPynq(pynqRX,pynqTX,0,128);
 
 String sensPacket;
 String pynqPacket;
@@ -58,68 +57,46 @@ bool arduNew = 0;
 bool pynqNew = 0;
 bool sensNew = 0;
 
-// void RecvSensCode(void *parameters) { 
-//   for(;;){
-//     if(sensDone){
-//       sensDone = 0;
-//       String str = "";
-//       // unsigned long begin = millis();
-//       int idx = 0;
-//       char c;
-//       while(SerialSens.available()){
-//         c = SerialSens.read();
-//         Serial.print(c);
-//         //ets_delay_us(25);
-//         str += c;
-//         if(c=='T'){
-//           // ets_delay_us(5);
-//           if(str[idx-1]=='%'){
-//             sensPacket = str;
-//             break;
-//           }
-//         }
-//         idx++;
-//       }
-//       sensNew = 1;
-//       arduDone = 1;
-//       //Serial.println("saved: " + str);
-//       // Serial.println("chars read: " + String(idx));
-//       // Serial.println(millis()-begin);
-//     } else{
-//       vTaskDelay(1 / portTICK_PERIOD_MS);
-//     }
-//   }
-// }
+void RecvSensCode(void *parameters) { 
+  for(;;){
+    String str = "";
+    
+    if(SerialSens.available()>0){
+      SerialSens.readStringUntil('\r');
+      if(SerialSens.peek()=='%'){
+        str = SerialSens.readStringUntil('\n');
+        SerialSens.flush();
+      }
+      if(str[0]=='%' && str[1] == 'S' && str[str.length()-1]=='T' && str[str.length()-2]=='%'){
+        sensNew = 1;
+        sensPacket = str;
+        Serial.println("packet intaken - sens");
+      }
+    }
+
+    vTaskDelay(4 / portTICK_PERIOD_MS);
+  }
+}
 
 void RecvPynqCode(void *parameters) {
   for(;;){
     String str = "";
     
-    if(SerialPynq.available()) {
-      digitalWrite(12, HIGH);
-      Serial.println(SerialPynq.readStringUntil('\r'));
-      if(SerialPynq.peek() == '%'){
+    if(SerialPynq.available()>0){
+      SerialPynq.readStringUntil('\r');
+      if(SerialPynq.peek()=='%'){
         str = SerialPynq.readStringUntil('\n');
-        SerialPynq.println(str);
+        SerialPynq.flush();
       }
-      while(SerialPynq.available()){
-        SerialPynq.read();
-      }
-      digitalWrite(12, LOW);
-      if(str[0]=='%' && str[1] == 'S' && str[str.length()-1]=='T' && str[str.length()-2]=='%' && !pynqNew){
-        digitalWrite(12, HIGH);
+      if(str[0]=='%' && str[1] == 'S' && str[str.length()-1]=='T' && str[str.length()-2]=='%'){
         pynqNew = 1;
         pynqPacket = str;
-        Serial.println(pynqPacket);
         Serial.println("packet intaken - pynq");
-        digitalWrite(12, LOW);
       }
-      // digitalWrite(12, LOW);
-      //vTaskDelay(4 / portTICK_PERIOD_MS); // originally 45
     }
 
     vTaskDelay(4 / portTICK_PERIOD_MS);
-  } 
+  }
 }
 
 void RecvArduCode(void *parameters) {
@@ -127,7 +104,6 @@ void RecvArduCode(void *parameters) {
     String str = "";
     
     if(Serial2.available()){
-      // digitalWrite(14, HIGH);
       Serial2.readStringUntil('\r');
       if(Serial2.peek() == '%'){
         str = Serial2.readStringUntil('\n');
@@ -135,17 +111,11 @@ void RecvArduCode(void *parameters) {
       while(Serial2.available()){
         Serial2.read();
       }
-      // digitalWrite(14, LOW);
       if(str[0]=='%' && str[1] == 'S' && str[str.length()-1]=='T' && str[str.length()-2]=='%'  && !arduNew){
-        digitalWrite(14, HIGH);
         arduNew = 1;
         arduPacket = str;
-        Serial.println(arduPacket);
         Serial.println("packet intaken - ardu");
-        digitalWrite(14, LOW);
       }
-      // digitalWrite(14, LOW);
-      //vTaskDelay(4 / portTICK_PERIOD_MS); // originally 26
     }
 
     vTaskDelay(4 / portTICK_PERIOD_MS); // avg interval is 120ms, i wouldnt trust the logic analyzer over the terminal tho
@@ -162,8 +132,14 @@ void SendCode(void *parameters) {
 
   for(;;){
 
+    if(toPynqNew){
+      SerialPynq.print(String(toPynqArr));
+      Serial.print("TO PYNQ: ");
+      Serial.println(String(toPynqArr));
+      toPynqNew = 0;
+    }
+
     if(pynqNew){
-      digitalWrite(23,HIGH);
       Serial.println("pynq packet is being processed...");
       divs = (pynqPacket.length() <= 4)? 3 : ((pynqPacket.length() - (pynqPacket.length()%packetSize))/packetSize);
       if(pynqPacket.length() == packetSize || pynqPacket.length() == packetSize*2 || pynqPacket.length() == packetSize*3){
@@ -199,7 +175,6 @@ void SendCode(void *parameters) {
       pynqNew = 0;
 
       for(int i=0; i<3; i++){
-        Serial.flush();
         if(pynqPackets[i] != "" && divs != 3){ 
           strcpy(myData.data, pynqPackets[i].c_str()); // all double quotes are const char arrays unless they are assigned to a String datatype, .c_str converts string to const char array
           myData.len = pynqPackets[i].length();
@@ -208,11 +183,7 @@ void SendCode(void *parameters) {
           myData.part = i;
           myData.divs = divs;
           myData.packetType = 2;
-          // digitalWrite(23,HIGH);
           esp_err_t result = esp_now_send(receiverAddress, (uint8_t *) &myData, sizeof(myData));
-          // digitalWrite(23,LOW);
-          // Serial.println(result == ESP_OK ? "Sending pynq confirmed" : "Sending pynq error");
-          // ets_delay_us(2400);
         }
       }
 
@@ -223,12 +194,9 @@ void SendCode(void *parameters) {
       pynqPackets[0] = "";
       pynqPackets[1] = "";
       pynqPackets[2] = "";
-      digitalWrite(23,LOW);
-      // pynqNew = 0;
     }
 
     if(arduNew){
-      digitalWrite(22,HIGH);
       Serial.println("ardu packet is being processed...");
       divs = (arduPacket.length() <= 4)? 3 : ((arduPacket.length() - (arduPacket.length()%packetSize))/packetSize);
       if(arduPacket.length() == packetSize || arduPacket.length() == packetSize*2 || pynqPacket.length() == packetSize*3){
@@ -264,7 +232,6 @@ void SendCode(void *parameters) {
       arduNew = 0;
 
       for(int i=0; i<3; i++){
-        // Serial.flush();
         if(arduPackets[i] != "" && divs != 3){ 
           strcpy(myData.data, arduPackets[i].c_str()); // all double quotes are const char arrays unless they are assigned to a String datatype, .c_str converts string to const char array
           myData.len = arduPackets[i].length();
@@ -273,10 +240,7 @@ void SendCode(void *parameters) {
           myData.part = i;
           myData.divs = divs;
           myData.packetType = 3;
-          // digitalWrite(22,HIGH);
           esp_err_t result = esp_now_send(receiverAddress, (uint8_t *) &myData, sizeof(myData));
-          // digitalWrite(22,LOW);
-          // Serial.println(result == ESP_OK ? "Sending ardu confirmed" : "Sending ardu error");
         }
       }
 
@@ -287,8 +251,6 @@ void SendCode(void *parameters) {
       arduPackets[0] = "";
       arduPackets[1] = "";
       arduPackets[2] = "";
-      digitalWrite(22,LOW);
-      // arduNew = 0;
     }
 
     if(sensNew){
@@ -312,8 +274,9 @@ void SendCode(void *parameters) {
           break;
       } 
 
+      sensNew = 0;
+
       for(int i=0; i<3; i++){
-        // Serial.flush();
         if(sensPackets[i] != "" && divs != 3){ 
           strcpy(myData.data, sensPackets[i].c_str()); // all double quotes are const char arrays unless they are assigned to a String datatype, .c_str converts string to const char array
           myData.len = sensPackets[i].length();
@@ -334,14 +297,6 @@ void SendCode(void *parameters) {
       sensPackets[0] = "";
       sensPackets[1] = "";
       sensPackets[2] = "";
-      sensNew = 0;
-    }
-
-    if(toPynqNew && myData.parity==int(myData.data[myData.len/3])+int(myData.data[2*myData.len/3])){
-      SerialPynq.print(myData.data);
-      Serial.print("TO PYNQ: ");
-      Serial.println(myData.data);
-      toPynqNew = 0;
     }
 
     vTaskDelay(3 / portTICK_PERIOD_MS);
@@ -352,31 +307,18 @@ void setup() {
   Serial.begin(115200); 
   Serial2.setRxBufferSize(128);
   Serial2.begin(115200,SERIAL_8N1,arduRX,arduTX);
-  //SerialArdu.begin(115200,SWSERIAL_8N1,arduRX,arduTX);
-  SerialPynq.begin(115200,SWSERIAL_8N1,pynqRX,pynqTX);
-  //SerialPynq.begin(115200,SERIAL_8N1,pynqRX,pynqTX);
-  //Serial1.begin(115200,SERIAL_8N1,pynqRX,pynqTX);
-  //SerialSens.begin(115200,SWSERIAL_8N1,sensRX,sensTX);
-
-  pinMode(pynqRX, INPUT);
-  pinMode(pynqTX, OUTPUT);
-
-  pinMode(12, OUTPUT);
-  pinMode(22, OUTPUT);
-
-  pinMode(14, OUTPUT);
-  pinMode(23, OUTPUT);
+  SerialPynq.begin(57620);
+  //SerialSens.begin(115200,SERIAL_8N1,sensRX,sensTX);
 
   Serial2.setTimeout(18);
   SerialPynq.setTimeout(5);
-  // SerialSens.setTimeout(5);
+  //SerialSens.setTimeout(5);
 
   //xTaskCreatePinnedToCore(RecvSensCode, "receiving sens packets", 10000, NULL, 3, &RecvSensHandle, 0);
-  xTaskCreatePinnedToCore(RecvPynqCode, "receiving pynq packets", 30000, NULL, 3, &RecvPynqHandle, 1);
-  xTaskCreatePinnedToCore(RecvArduCode, "receiving ardu packets", 30000, NULL, 3, &RecvArduHandle, 1);
-  xTaskCreatePinnedToCore(SendCode, "sending packets", 100000, NULL, 3, &SendHandle, 0);
+  xTaskCreatePinnedToCore(RecvPynqCode, "receiving pynq packets", 10000, NULL, 3, &RecvPynqHandle, 1);
+  xTaskCreatePinnedToCore(RecvArduCode, "receiving ardu packets", 10000, NULL, 3, &RecvArduHandle, 1);
+  xTaskCreatePinnedToCore(SendCode, "sending packets", 20000, NULL, 3, &SendHandle, 0);
 
-  //esp_now_set_wake_window(3000); // to increase connection alive time
   WiFi.mode(WIFI_STA);
 
   if (esp_now_init() != ESP_OK) {
