@@ -28,11 +28,12 @@ struct_message myData;
 esp_now_peer_info_t peerInfo; // create peer interface
 
 // TaskHandle_t toPynqHandle;
+TaskHandle_t recvCodeHandle;
 
 void empty(){
-  packets[0] = "";
-  packets[1] = "";
-  packets[2] = "";
+  // packets[0] = "";
+  // packets[1] = "";
+  // packets[2] = "";
   full[0] = 0;
   full[1] = 0;
   full[2] = 0;
@@ -43,6 +44,8 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
   if(needToSort == 0){
     memcpy(&myData, incomingData, sizeof(myData));
     needToSort = 1;
+  }else{
+    Serial.println("PACKET COLLISION");
   }
 }
 
@@ -75,32 +78,8 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
 //   }
 // }
 
-void setup() {
-  Serial.begin(230400);
-  WiFi.mode(WIFI_STA);
-
-  if (esp_now_init() != 0) {
-    Serial.println("Error initializing ESP-NOW");
-  }
-  else{
-    Serial.println("ESP-NOW Initialized");
-  }
-
-  esp_now_register_recv_cb(OnDataRecv);
-  esp_now_register_send_cb(OnDataSent); 
-  // xTaskCreatePinnedToCore(toPynqCode, "sending to pynq", 10000, NULL, 3, &toPynqHandle, 1);
-
-  memcpy(peerInfo.peer_addr, receiverAddress, 6); // copy address into peerinfo obj
-  peerInfo.channel = 0;  
-  peerInfo.encrypt = false;
-        
-  if (esp_now_add_peer(&peerInfo) != ESP_OK){ // Add peer  
-    Serial.println("Failed to add peer");
-    return;
-  }
-}
-
-void loop() {
+void recvCode(void *parameters) {
+  for(;;){
   if(needToSort==1){
     if((myData.part==pastPart+1 || myData.part==0) && full[myData.part]==0){ //&& myData.parity==int(myData.data[myData.len/3])+int(myData.data[2*myData.len/3])
       packets[myData.part] = String(myData.data);
@@ -159,5 +138,36 @@ void loop() {
     //needToSort = 0;
   }
 
-  vTaskDelay(4 / portTICK_PERIOD_MS);
+  vTaskDelay(3 / portTICK_PERIOD_MS);
+}
+}
+
+void setup() {
+  Serial.begin(230400);
+  WiFi.mode(WIFI_STA);
+
+  if (esp_now_init() != 0) {
+    Serial.println("Error initializing ESP-NOW");
+  }
+  else{
+    Serial.println("ESP-NOW Initialized");
+  }
+
+  esp_now_register_recv_cb(OnDataRecv);
+  esp_now_register_send_cb(OnDataSent); 
+  // xTaskCreatePinnedToCore(toPynqCode, "sending to pynq", 10000, NULL, 3, &toPynqHandle, 1);
+  xTaskCreatePinnedToCore(recvCode,"receiving packets",30000,NULL,1000,&recvCodeHandle, 1);
+
+  memcpy(peerInfo.peer_addr, receiverAddress, 6); // copy address into peerinfo obj
+  peerInfo.channel = 0;  
+  peerInfo.encrypt = false;
+        
+  if (esp_now_add_peer(&peerInfo) != ESP_OK){ // Add peer  
+    Serial.println("Failed to add peer");
+    return;
+  }
+}
+
+void loop() {
+  
 }
