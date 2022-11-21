@@ -4,49 +4,40 @@
 
 #define packetSize 200
 
-bool needToSort = 0;
-
-int filled = 0;
-int pastPart = -1;
-int pastOrder = -1;
-String packets[3] = {"","",""};
-bool full[3] = {0,0,0};
-
 uint8_t receiverAddress[] = {0x78, 0xE3, 0x6D, 0x09, 0x08, 0x20};
+esp_now_peer_info_t peerInfo; // create peer interface
 
 typedef struct struct_message { // a class for packet format (for esp32 to send and recieve)
-    int len;
-    int parity;
+    // int len;
+    //int parity;
     int order; // used to order packets
     int part;
     int divs;
-    int packetType;
-    char data[packetSize]; // labeled data bits, 233 bytes leftover for this
+    char data[packetSize+2]; // labeled data bits, 233 bytes leftover for this
 } struct_message;
 
-struct_message myData;
-esp_now_peer_info_t peerInfo; // create peer interface
+struct_message recvData;
+struct_message sentData;
 
-// TaskHandle_t toPynqHandle;
+TaskHandle_t toPynqHandle;
 TaskHandle_t recvCodeHandle;
 
-void empty(){
-  // packets[0] = "";
-  // packets[1] = "";
-  // packets[2] = "";
-  full[0] = 0;
-  full[1] = 0;
-  full[2] = 0;
-  filled = 0;
-}
+bool newSegment = 0;
+String data = "";
+String output = "";
 
 void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
-  if(needToSort == 0){
-    memcpy(&myData, incomingData, sizeof(myData));
-    needToSort = 1;
+  // digitalWrite(18,HIGH);
+
+  if(newSegment==0){
+    memcpy(&recvData, incomingData, sizeof(recvData));
+    newSegment=1;
   }else{
+    Serial.flush();
     Serial.println("PACKET COLLISION");
   }
+
+  // digitalWrite(18,LOW);
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
@@ -55,119 +46,90 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
   return;
 }
 
-// void toPynqCode(void *parameters){
-//   for(;;){
-//     String toPynq = "";
-//     if(Serial.available()){
-//       Serial.readStringUntil('\r');
-//       if(Serial.peek()=='%'){
-//         toPynq = Serial.readStringUntil('\n');
-//       }
-//       if(toPynq[0]=='%' && toPynq[1]=='S' && toPynq[toPynq.length()-2]=='%' && toPynq[toPynq.length()-1]=='T'){
-//         myData.len = toPynq.length();
-//         myData.parity = int(toPynq[toPynq.length()/3]) + int(toPynq[2*toPynq.length()/3]);
-//         myData.order = 0;
-//         myData.part = 0;
-//         myData.divs = 0;
-//         myData.packetType = 4;
-//         strcpy(myData.data, toPynq.c_str());
-//         esp_now_send(receiverAddress, (uint8_t *) &myData, sizeof(myData));
-//       }
-//     }
-//     vTaskDelay(50 / portTICK_PERIOD_MS);
-//   }
-// }
+int pastOrder = -1;
+int pastPart = -1;
 
-void recvCode(void *parameters) {
+void recvCode(void *parameters){
   for(;;){
-  if(needToSort==1){
-    if((myData.part==pastPart+1 || myData.part==0) && full[myData.part]==0){ //&& myData.parity==int(myData.data[myData.len/3])+int(myData.data[2*myData.len/3])
-      packets[myData.part] = String(myData.data);
-      full[myData.part] = 1;
-      filled++;
-      pastPart = myData.part;
-    }else{
-      Serial.println("PART NUM INCORRECT, EMPTIED");
-      empty();
-      pastOrder = myData.order;
-    }
-    if(filled==myData.divs+1){
-      if(myData.order==(pastOrder+1)%5){
-        switch(myData.divs){
-          case 0: 
-            //Serial.println("SMALL PACKET PRINTING...");
-            Serial.println(packets[0]); 
-            break;
-          case 1: 
-            //Serial.println("MEDIUM PACKET PRINTING...");
-            Serial.println(packets[0]+packets[1]);
-            break;
-          case 2:
-            //Serial.println("LARGE PACKET PRINTING...");
-            Serial.println(packets[0]+packets[1]+packets[2]);
-            break;
+    if(newSegment){
+      // digitalWrite(15, HIGH);
+
+      if((recvData.part==pastPart+1 || recvData.part==0) && (recvData.order==pastOrder+1 || recvData.order==0)){
+        data = String(recvData.data);
+        output += data;
+        if(data[data.length()-2]=='%' && data[data.length()-1]=='T'){
+          Serial.flush();
+          Serial.println(output);
+          output = "";
+          pastOrder = recvData.order;
+        }else{
+          pastPart = recvData.part;
         }
-        empty();
-        pastOrder = myData.order;
       }else{
-        Serial.println("ORDER INCORRECT, EMPTIED");
-        empty();
-        pastOrder = myData.order;
+        output = "";
+        pastOrder = recvData.order;
+      }
+      newSegment = 0;
+
+      // digitalWrite(15, LOW);
+    }
+
+    vTaskDelay(3 / portTICK_PERIOD_MS);
+  }
+}
+
+void toPynqCode(void *parameters){
+  for(;;){
+    String toPynq = "";
+    if(Serial.available()){
+      Serial.readStringUntil('\r');
+      if(Serial.peek()=='%'){
+        toPynq = Serial.readStringUntil('\n');
+      }
+      if(toPynq[0]=='%' && toPynq[1]=='S' && toPynq[toPynq.length()-2]=='%' && toPynq[toPynq.length()-1]=='T'){
+        //sentData.len = toPynq.length();
+        //sentData.parity = int(toPynq[toPynq.length()/3]) + int(toPynq[2*toPynq.length()/3]);
+        sentData.order = 0;
+        sentData.part = 0;
+        sentData.divs = 0;
+        strcpy(sentData.data, toPynq.c_str());
+        esp_now_send(receiverAddress, (uint8_t *) &sentData, sizeof(sentData));
       }
     }
-    needToSort = 0;
+    vTaskDelay(40 / portTICK_PERIOD_MS);
   }
-
-  if(Serial.available()){
-    //needToSort = 1;
-    String toPynq = "";
-    Serial.readStringUntil('\r');
-    if(Serial.peek()=='%'){
-      toPynq = Serial.readStringUntil('\n');
-    }
-    if(toPynq[0]=='%' && toPynq[1]=='S' && toPynq[toPynq.length()-2]=='%' && toPynq[toPynq.length()-1]=='T'){
-      myData.len = toPynq.length();
-      myData.parity = int(toPynq[toPynq.length()/3]) + int(toPynq[2*toPynq.length()/3]);
-      myData.order = 0;
-      myData.part = 0;
-      myData.divs = 0;
-      myData.packetType = 4;
-      strcpy(myData.data, toPynq.c_str());
-      esp_now_send(receiverAddress, (uint8_t *) &myData, sizeof(myData));
-    }
-    //needToSort = 0;
-  }
-
-  vTaskDelay(3 / portTICK_PERIOD_MS);
-}
 }
 
 void setup() {
   Serial.begin(230400);
   WiFi.mode(WIFI_STA);
 
-  if (esp_now_init() != 0) {
+  // pinMode(15,OUTPUT);
+  // pinMode(18,OUTPUT);
+
+  if (esp_now_init() != ESP_OK) {
     Serial.println("Error initializing ESP-NOW");
-  }
-  else{
-    Serial.println("ESP-NOW Initialized");
+    return;
   }
 
-  esp_now_register_recv_cb(OnDataRecv);
   esp_now_register_send_cb(OnDataSent); 
-  // xTaskCreatePinnedToCore(toPynqCode, "sending to pynq", 10000, NULL, 3, &toPynqHandle, 1);
-  xTaskCreatePinnedToCore(recvCode,"receiving packets",30000,NULL,1000,&recvCodeHandle, 1);
+  xTaskCreatePinnedToCore(toPynqCode, "sending to pynq",10000,NULL,5,&toPynqHandle,1);
+  xTaskCreatePinnedToCore(recvCode,"receiving packets",20000,NULL,5,&recvCodeHandle,1);
 
   memcpy(peerInfo.peer_addr, receiverAddress, 6); // copy address into peerinfo obj
   peerInfo.channel = 0;  
   peerInfo.encrypt = false;
-        
+
   if (esp_now_add_peer(&peerInfo) != ESP_OK){ // Add peer  
     Serial.println("Failed to add peer");
     return;
   }
+  esp_now_register_recv_cb(OnDataRecv);
 }
 
 void loop() {
-  
+  // 1. verify that ESP NOW is actually working
+  // 2. connect segments together until you see that last two chars are %T, then print and clear
+  delay(1);
+  // in order to keep the kernal present, you need to have tasks in core 0+1, or have something in the main loop
 }
